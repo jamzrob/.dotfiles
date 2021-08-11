@@ -24,9 +24,12 @@ let mapleader = " "
 nnoremap <leader>pv :Vex<CR>
 nnoremap <leader>sv :Sex<CR>
 nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" explore files
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>
-nnoremap <C-j> :cnext<CR>
+
+nnoremap <C-j> :cnext<CR>zzza
 nnoremap <C-k> :cprev<CR>
 nnoremap <leader>P o<esc>P<CR>
 vnoremap <leader>p "_dP
@@ -36,8 +39,30 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
-" moves stuff around after highlighting
+" moves text 
 vnoremap J :m '>+1<CR>gv=gv " moves stuff around after highlighting
 vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <exc>:m .-2<CR>==
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
 
+" make y behave like other capital letters
+nnoremap Y y$
 
+" keep it centered how
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" undo breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" jumplist populated every time more than 5
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+"
