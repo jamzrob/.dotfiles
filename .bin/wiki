@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+wikis=(index shipping learn mlinfra vim chess 20something)
+selected=$(printf "%s\n" "${wikis[@]}" | fzf)
+echo $selected
+
+if (( $wikis[(Ie)$selected] )); then
+    index=${wikis[(ie)$selected]}
+    tmux neww nvim -c ":VimwikiIndex $index" -n $selected
+    tmux rename-window "$selected-wiki"
+else
+fi

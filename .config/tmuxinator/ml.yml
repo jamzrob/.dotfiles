@@ -1,0 +1,18 @@
+# /Users/jraubenheimer/.config/tmuxinator/ml.yml
+
+name: ml
+root: ~/
+
+pre_window: ssh search
+windows:
+    - vim:
+          - cd development
+          - vim .
+    - git:
+          - cd development
+          - eval `ssh-agent`
+          - ssh-add
+    - run:
+          - cd development
+          - eval `ssh-agent`
+          - ssh-add

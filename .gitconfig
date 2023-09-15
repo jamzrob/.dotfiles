@@ -1,0 +1,25 @@
+[alias]
+        ad = add *
+        df = diff
+        rc = log -p -n 1
+        rp = pull --recurse-submodules
+        co = checkout
+        cob = checkout -b
+        del = branch -D
+        br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+        br = branch
+        ci = commit -a -S -m
+        st = status
+        sh = stash -u
+        rs = reset HEAD~
+        lg = !git log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+        last = log -1 HEAD
+        pf = push --force-with-lease
+        pu = push -u
+
+[core]
+        symlinks = true
+
+[push]
+        autoSetupRemote = true
+        default = current

@@ -1,0 +1,21 @@
+# /Users/jraubenheimer/.config/tmuxinator/py.yml
+
+name: mlcp
+root: ~/
+
+pre_window: ssh search
+windows:
+    - vim:
+          - cd
+          - <%= @args[0] %>
+          - vim .
+    - git:
+          - mlcp
+          - <%= @args[0] %>
+          - eval `ssh-agent`
+          - ssh-add
+    - run:
+          - mlcp
+          - <%= @args[0] %>
+          - eval `ssh-agent`
+          - ssh-add

@@ -1,5 +1,4 @@
-# install.sh
-# symlink you dotfiles to appropriate places
+# symlink dotfiles to appropriate places
 
 DIR=$HOME/.dotfiles
 
@@ -13,6 +12,7 @@ DOTFILES=(
     ".gitconfig"
     ".config/nvim"
     ".config/tmuxinator"
+    ".ssh/config"
 )
 
 for dotfile in "${DOTFILES[@]}";do
