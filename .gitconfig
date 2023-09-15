@@ -23,3 +23,6 @@
 [push]
         autoSetupRemote = true
         default = current
+[user]
+	email = raubenheimerjames@gmail.com
+	name = James Raubenheimer
