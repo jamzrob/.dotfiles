@@ -8,7 +8,7 @@
         del = branch -D
         br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
         br = branch
-        ci = commit -a -S -m
+        ci = commit -a -m
         st = status
         sh = stash -u
         rs = reset HEAD~
@@ -23,6 +23,3 @@
 [push]
         autoSetupRemote = true
         default = current
-[user]
-	email = raubenheimerjames@gmail.com
-	name = James Raubenheimer
