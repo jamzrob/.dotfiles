@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+git config --global user.name "James Raubenheimer"
+git config --global user.email "raubenheimerjames@gmail.com"

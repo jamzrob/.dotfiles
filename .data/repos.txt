@@ -1,0 +1,4 @@
+.dotfiles
+.dotfiles/.config/nvim
+todo
+vimwiki

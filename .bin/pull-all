@@ -8,8 +8,10 @@ REPOS=(
     "todo"
     "vimwiki"
 )
+DATA="${HOME}/.dotfiles/.data/repos.txt"
 
-for REPO in "${REPOS[@]}"; do
+
+for REPO in `cat "${DATA}"`; do
     REPO_PATH="${HOME}/${REPO}"
     echo "Updating $REPO_PATH at `date`"
     cd "$REPO_PATH"
