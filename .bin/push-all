@@ -2,10 +2,13 @@
 
 DATA="${HOME}/.dotfiles/.data/repos.txt"
 
+echo "\n\n"
 for REPO in `cat "${DATA}"`; do
+    echo "$REPO"
     REPO_PATH="${HOME}/${REPO}"
-    echo "Updating $REPO_PATH at `date`"
+    cd "$REPO_PATH"
     git add .
-    git commit -m "Script update on `data`"
+    git commit -m "Script update on `date`"
     git push
+    echo "\n\n"
 done

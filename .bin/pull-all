@@ -2,9 +2,11 @@
 
 DATA="${HOME}/.dotfiles/.data/repos.txt"
 
+echo "\n\n"
 for REPO in `cat "${DATA}"`; do
+    echo "$REPO"
     REPO_PATH="${HOME}/${REPO}"
-    echo "$REPO_PATH"
     cd "$REPO_PATH"
     git pull
+    echo "\n\n"
 done
