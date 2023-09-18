@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+IFS=$'\n'
+
+REPOS=(
+    ".dotfiles"
+    ".dotfiles/.config/nvim"
+    "todo"
+    "vimwiki"
+)
+
+for REPO in "${REPOS[@]}"; do
+    REPO_PATH="${HOME}/${REPO}"
+    echo "Updating $REPO_PATH at `date`"
+    cd "$REPO_PATH"
+    git status
+    echo "Fetching"
+    git fetch
+    echo "Pulling"
+    git pull
+done

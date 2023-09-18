@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+xargs brew install < "$HOME/.dotfiles/.data/brews.txt"
