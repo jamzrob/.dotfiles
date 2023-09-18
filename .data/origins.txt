@@ -1,0 +1,16 @@
+git@github.com:jamzrob/Stonkify.git
+git@github.com:jamzrob/starter.git
+git@github.com:jamzrob/nasa-pic-of-day.git
+git@github.com:jamzrob/paydc.git
+git@github.com:jamzrob/reading-list.git
+git@github.com:jamzrob/vim-course.git
+git@github.com:jamzrob/todoer.git
+git@github.com:jamzrob/fitcheck.git
+git@github.com:jamzrob/books.git
+git@github.com:jamzrob/wallpapers.git
+git@github.com:ChangePlusPlusVandy/fire-app.git
+git@github.com:jamzrob/guides.git
+git@github.com:jamzrob/keep-the-streak-going.git
+git@github.com:jamzrob/workout.git
+git@github.com:jamzrob/whatnxt.git
+git@github.com:jamzrob/LSO-Energy-Advisors.git

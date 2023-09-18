@@ -10,9 +10,8 @@ do
   then
     if [ -d "$REPOSITORIES/$REPO/.git" ]
     then
-        echo "Pulling $REPO"
-        cd "$REPOSITORIES/$REPO"
-        git rp
+        cd "$REPOSITORIES/$REPO/.git"
+        set-gitconfig
     else
         echo "Skipping $REPO"
     fi

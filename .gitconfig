@@ -16,6 +16,7 @@
         last = log -1 HEAD
         pf = push --force-with-lease
         pu = push -u
+        rclone = clone --recurse-submodules
 
 [core]
         symlinks = true

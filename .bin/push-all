@@ -1,14 +1,22 @@
 #!/bin/zsh
 
-DATA="${HOME}/.dotfiles/.data/repos.txt"
+REPOSITORIES=`pwd`
 
-echo "\n\n"
-for REPO in `cat "${DATA}"`; do
-    echo "$REPO"
-    REPO_PATH="${HOME}/${REPO}"
-    cd "$REPO_PATH"
-    git add .
-    git commit -m "Script update on `date`"
-    git push
-    echo "\n\n"
+IFS=$'\n'
+
+for REPO in `ls "$REPOSITORIES/"`
+do
+  if [ -d "$REPOSITORIES/$REPO" ]
+  then
+    if [ -d "$REPOSITORIES/$REPO/.git" ]
+    then
+        cd "$REPOSITORIES/$REPO"
+        echo "Pushing to $REPO"
+        git add .
+        git commit -m "Script update on `date`"
+        git push
+    else
+        echo "Skipping $REPO"
+    fi
+  fi
 done

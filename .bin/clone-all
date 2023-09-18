@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+DATA="${HOME}/.dotfiles/.data/origins.txt"
+
+echo "\n\n"
+for REPO in `cat "${DATA}"`; do
+    echo "Cloning $REPO"
+    git rclone $REPO
+done

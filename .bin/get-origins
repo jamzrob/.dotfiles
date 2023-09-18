@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+find . -path '*/.git/config' -execdir git remote get-url origin \; > ~/.dotfiles/.data/origins.txt
