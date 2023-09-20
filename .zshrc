@@ -5,7 +5,8 @@ alias mux="tmuxinator"
 alias search="ssh search"
 alias mlcp="mux start mlcp cicero"
 alias ml="mux start ml"
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -a'
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export NODE_OPTIONS=--openssl-legacy-provider
 export OPENAI_API_KEY=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
@@ -16,12 +17,9 @@ export EDITOR="nvim"
 
 
 export PATH=/opt/homebrew/opt/python@3.11/libexec/bin/:~/.local/scripts/:$PATH
-source $(brew --prefix nvm)/nvm.sh
-eval "$(rbenv init - zsh)"
-eval "$(ssh-agent -s)"
 
 alias nvim_config="vim ~/.config/nvim/init.lua"
-bindkey -v
+alias rtmux="tmux source-file ~/.tmux.conf"
 
 export GPG_TTY=$(tty)
 
