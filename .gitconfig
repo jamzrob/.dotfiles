@@ -17,6 +17,7 @@
         pf = push --force-with-lease
         pu = push -u
         rclone = clone --recurse-submodules
+        cip = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 
 [core]
         symlinks = true
