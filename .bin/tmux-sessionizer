@@ -3,7 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/my-dev -mindepth 1 -maxdepth 1  | fzf)
+    find ~/development/ ~/my-dev -mindepth 1 -maxdepth 1 -type d > $HOME/.dotfiles/.data/sesh-input
+    cat $HOME/.dotfiles/.data/sesh-more-input >>  $HOME/.dotfiles/.data/sesh-input
+    selected=$(cat $HOME/.dotfiles/.data/sesh-input | fzf)
 fi
 
 if [[ -z $selected ]]; then
