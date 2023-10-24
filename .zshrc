@@ -13,7 +13,7 @@ alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export NODE_OPTIONS=--openssl-legacy-provider
-export OPENAI_API_KEY=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
+export OPENAI_API_KEY=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
 export TWILIO_ACCOUNT_SID=ACfeaac728b267b9603613bd4ddbe9b49e
 export TWILIO_AUTH_TOKEN=df9bd786491b694d5e295c7dfe4dcc8a export NVM_DIR=~/.nvm
 export EDITOR="nvim"
@@ -35,12 +35,12 @@ export PATH="$HOME/.bin:$PATH"
 #    git push --force-with-lease
 #}
 #
-#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-#export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
-#
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-###
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
