@@ -46,10 +46,9 @@ export PATH="$HOME/.local/scripts/:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi
 eval "$(pyenv init -)"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -78,14 +77,3 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 . "$HOME/.cargo/env"
 
 alias tail_php='tail -f /var/log/httpd/php.log'
-
-
-
-if [[ -z "$TMUX" ]] ;then
-    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available attach to a new one
-         tmux new-session
-    else
-         tmux attach-session -t "$ID" # if available attach to it
-    fi
-fi
