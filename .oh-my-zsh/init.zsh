@@ -79,3 +79,7 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 . "$HOME/.cargo/env"
 
 alias tail_php='tail -f /var/log/httpd/php.log'
+
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi

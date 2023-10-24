@@ -17,3 +17,9 @@ for dotfile in "${DOTFILES[@]}";do
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
+
+if [ ! -f ~/.zshrc ]; then
+    cp "${DIR}/.zshrc" "${HOME}/.zshrc"
+fi
+
+
