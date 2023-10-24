@@ -1,6 +1,5 @@
 # Put files in this folder to add your own custom functionality.
 # See: https://github.com/ohmyzsh/ohmyzsh/wiki/Customization
-# 
 # Files in the custom/ directory will be:
 # - loaded automatically by the init script, in alphabetical order
 # - loaded last, after all built-ins in the lib/ directory, to override them
@@ -80,6 +79,13 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 
 alias tail_php='tail -f /var/log/httpd/php.log'
 
-if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
-  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+
+
+if [[ -z "$TMUX" ]] ;then
+    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+    if [[ -z "$ID" ]] ;then # if not available attach to a new one
+         tmux new-session
+    else
+         tmux attach-session -t "$ID" # if available attach to it
+    fi
 fi
