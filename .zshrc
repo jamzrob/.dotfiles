@@ -18,6 +18,9 @@ export TWILIO_ACCOUNT_SID=ACfeaac728b267b9603613bd4ddbe9b49e
 export TWILIO_AUTH_TOKEN=df9bd786491b694d5e295c7dfe4dcc8a export NVM_DIR=~/.nvm
 export EDITOR="nvim"
 export GPG_TTY=$(tty)
+if command -v ngrok &>/dev/null; then
+	eval "$(ngrok completion)"
+fi
 
 
 

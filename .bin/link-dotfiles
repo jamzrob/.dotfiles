@@ -5,6 +5,7 @@ DIR=$HOME/.dotfiles
 DOTFILES=(
     ".bin"
     ".bashrc"
+    ".zprofile"
     ".tmux.conf"
     ".gitconfig"
     ".config/nvim"
