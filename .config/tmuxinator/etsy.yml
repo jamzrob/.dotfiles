@@ -4,14 +4,17 @@ name: etsy
 root: ~/
 
 windows:
-    - vim:
-          - ssh dev
-          - ew
-          - vim .
-    - git:
-          - ssh dev
-          - ew
-          - git status
-    - run:
-          - ssh dev
-          - ew
+  - vim:
+    - ssh dev
+    - source ~/.bashrc
+    - ew
+    - vim .
+  - git:
+    - ssh dev
+    - source ~/.bashrc
+    - ew
+    - git status
+  - run:
+    - ssh dev
+    - source ~/.bashrc
+    - ew

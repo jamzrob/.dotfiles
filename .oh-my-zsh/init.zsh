@@ -11,12 +11,6 @@
 # cd $brainstormr
 #
 #
-
-bindkey '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
-bindkey -M menuselect '\r' .accept-line
-bindkey -s "^f" "tmux-sessionizer\n"
-bindkey -s "^h" "cheat\n"
-
 alias todo="~/todoer/target/release/todo"
 alias gostreaks="ssh -i ~/.ssh/Default ubuntu@44.202.59.102"
 alias vim="nvim"
@@ -48,7 +42,9 @@ export PATH="$HOME/.bin:$PATH"
 
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
-if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 eval "$(pyenv init -)"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -77,3 +73,9 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 . "$HOME/.cargo/env"
 
 alias tail_php='tail -f /var/log/httpd/php.log'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+alias rskhd="skhd --restart-service"

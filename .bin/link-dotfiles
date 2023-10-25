@@ -10,6 +10,8 @@ DOTFILES=(
     ".gitconfig"
     ".config/nvim"
     ".config/tmuxinator"
+    ".config/yabai"
+    ".config/skhd"
     ".ssh/config"
 )
 
