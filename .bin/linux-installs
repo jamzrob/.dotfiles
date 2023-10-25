@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# Install curl 
+# https://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos
+# homebrew
+sudo yum groupinstall 'Development Tools'
+sudo yum install procps-ng curl file git
+# Add to zshrc
+# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+
+

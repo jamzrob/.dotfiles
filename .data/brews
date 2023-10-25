@@ -47,9 +47,6 @@ luv
 lz4
 m4
 mongocli
-mongodb-atlas-cli
-mongodb-community
-mongodb-database-tools
 mongosh
 mpdecimal
 msgpack
