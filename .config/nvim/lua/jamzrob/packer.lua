@@ -100,6 +100,8 @@ require("packer").startup(function(use)
             end,
         })
 
+        -- calendar 
+        use {'itchyny/calendar.vim'}
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

@@ -26,15 +26,35 @@ keyset({'n', 'v'}, '<leader>ps', function () builtin.grep_string({ search = vim.
 
 keyset('n', '<C-g>', builtin.git_files, {})
 keyset('n', '<leader>vrc', function()
-    builtin.find_files({
+    builtin.git_files({
         prompt_title = "< nvim >",
         cwd = '~/.config/nvim',
+    })
+end)
+keyset('n', '<leader>vrw', function()
+    builtin.git_files({
+        prompt_title = "< nvim >",
+        cwd = '~/vimwiki',
     })
 end)
 keyset('n', '<leader>vrf', function()
     builtin.live_grep({
         prompt_title = "< nvim >",
         cwd = '~/.config/nvim',
+    })
+end)
+keyset('n', '<leader>fG', function()
+    builtin.live_grep({
+     vimgrep_arguments = {
+         'rg',
+         '--color=never',
+         '--no-heading',
+         '--with-filename',
+         '--line-number',
+         '--column',
+         '--smart-case',
+         '--hidden'
+     },
     })
 end)
 keyset('n', '<leader>vrg', function()
