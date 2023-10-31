@@ -11,7 +11,7 @@
 # cd $brainstormr
 #
 #
-alias todo="~/todoer/target/release/todo"
+alias todo="~/my-dev/todoer/target/release/todo"
 alias gostreaks="ssh -i ~/.ssh/Default ubuntu@44.202.59.102"
 alias vim="nvim"
 alias mux="tmuxinator"

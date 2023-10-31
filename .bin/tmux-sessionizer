@@ -3,13 +3,9 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    env=$(cat $HOME/.dotfiles/.data/env)
-    if [[ $env == "personal" ]]; then
-        find ~/development/ ~/my-dev -mindepth 1 -maxdepth 1 -type d > $HOME/.dotfiles/.data/sesh-input
-        cat $HOME/.dotfiles/.data/sesh-more-input >>  $HOME/.dotfiles/.data/sesh-input
-        selected=$(cat $HOME/.dotfiles/.data/sesh-input | fzf --delimiter / --with-nth -1)
-        exit 0
-    fi
+    find ~/development/ ~/my-dev -mindepth 1 -maxdepth 1 -type d > $HOME/.dotfiles/.data/sesh-input
+    cat $HOME/.dotfiles/.data/sesh-more-input >>  $HOME/.dotfiles/.data/sesh-input
+    selected=$(cat $HOME/.dotfiles/.data/sesh-input | fzf --delimiter / --with-nth -1)
 fi
 
 if [[ -z $selected ]]; then
