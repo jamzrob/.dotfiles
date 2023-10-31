@@ -11,7 +11,8 @@
 # cd $brainstormr
 #
 #
-alias todo="~/todoer/target/release/todo"
+alias todo="~/my-dev/todoer/target/release/todo"
+alias past="~/my-dev/todoer/target/release/past_todo"
 alias gostreaks="ssh -i ~/.ssh/Default ubuntu@44.202.59.102"
 alias vim="nvim"
 alias mux="tmuxinator"
@@ -84,7 +85,6 @@ alias ptop='ceiling_divide $LINES 4; clear_rows $ceiling_result'
 alias pmid='ceiling_divide $LINES 2; clear_rows $ceiling_result'
 # Clear 3/4th
 alias pdown='ceiling_divide $((3*LINES)) 4; clear_rows $ceiling_result'
-alias curl='/home/linuxbrew/.linuxbrew/bin/curl'
 
 alias ez="vim ~/.dotfiles/.oh-my-zsh/init.zsh"
 alias rz="~/.zshrc"
