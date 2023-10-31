@@ -113,13 +113,6 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.jsx", "*.tsx", "*.js", "*.ts" },
-  callback = function()
-    vim.cmd("EslintFixAll")
-  end,
-})
-
 vim.cmd([[
 
 
