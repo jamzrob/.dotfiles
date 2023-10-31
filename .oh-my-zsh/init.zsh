@@ -84,7 +84,6 @@ alias ptop='ceiling_divide $LINES 4; clear_rows $ceiling_result'
 alias pmid='ceiling_divide $LINES 2; clear_rows $ceiling_result'
 # Clear 3/4th
 alias pdown='ceiling_divide $((3*LINES)) 4; clear_rows $ceiling_result'
-alias curl='/home/linuxbrew/.linuxbrew/bin/curl'
 
 alias ez="vim ~/.dotfiles/.oh-my-zsh/init.zsh"
 alias rz="~/.zshrc"
