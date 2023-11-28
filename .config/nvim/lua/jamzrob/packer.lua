@@ -112,16 +112,38 @@ end)
 
 vim.cmd([[
     let g:vimwiki_list = [{
-	\ 'path': '~/vimwiki/',
-	\ 'template_path': '~/vimwiki/.templates/',
+	\ 'path': '~/wiki/etsy',
+	\ 'template_path': '~/wiki/.templates/',
 	\ 'template_default': 'default',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
-	\ 'path_html': '~/vimwiki/.site_html/',
+	\ 'path_html': '~/wiki/.site_html/',
 	\ 'custom_wiki2html': 'vimwiki_markdown',
 	\ 'template_ext': '.html',
-    \ 'auto_tags': 1 }]
-
+    \ 'auto_tags': 1,
+    \'links_space_char': '_' }, 
+    \{
+	\ 'path': '~/wiki/personal',
+	\ 'template_path': '~/wiki/.templates/',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/wiki/.site_html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+	\ 'template_ext': '.html',
+    \ 'auto_tags': 1,
+    \'links_space_char': '_' },
+    \{
+	\ 'path': '~/wiki/work',
+	\ 'template_path': '~/wiki/.templates/',
+	\ 'template_default': 'default',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.md',
+	\ 'path_html': '~/wiki/.site_html/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+	\ 'template_ext': '.html',
+    \ 'auto_tags': 1,
+    \'links_space_char': '_' }]
     let g:vimwiki_auto_header=1
 ]])
 

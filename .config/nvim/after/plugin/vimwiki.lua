@@ -15,7 +15,7 @@ vim.g.vimwiki_folder = 'expr'
 -- configuration
 local config = {
     projectsFolder = '/$HOME/my-dev', --full path without ~
-    vimwikiRoot = '/$HOME/vimwiki',
+    vimwikiRoot = '/$HOME/wiki',
     maxDepth = 3,
     ignoreFolders = { 'node_modules', '.git' },
     rootWikiFolder = '_wiki',
@@ -71,7 +71,9 @@ local function updateVimwikiList(folders)
             ext = config.wikiConfig.ext,
             auto_tags =1,
             path_html = '~/vimwiki_html/'..filename,
-            custom_wiki2html = '~/vimwiki/wiki2html.sh'
+            custom_wiki2html = '~/wiki/wiki2html.sh',
+            generated_links_caption= 1,
+            links_space_char='_'
         }
         table.insert(new_list, item)
     end

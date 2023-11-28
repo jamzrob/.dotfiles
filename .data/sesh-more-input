@@ -1,6 +1,7 @@
 $HOME/.dotfiles
-.$HOME/dotfiles/nvim
-.$HOME/my-dev
-.$HOME/Dropbox
-.$HOME/Desktop
-.$HOME/.zshrc
+$HOME/dotfiles/nvim
+$HOME/my-dev
+$HOME/Dropbox
+$HOME/Desktop
+$HOME/.zshrc
+$HOME/wiki

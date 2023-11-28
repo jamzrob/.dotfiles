@@ -52,7 +52,7 @@ vim.keymap.set("n", "<C-P>", "zzgT")
 
 -- Split windows
 vim.keymap.set("n", "<leader>pv", ":Vex!<CR>")
-vim.keymap.set("n", "<leader>sv", ":Sex!<CR>")
+vim.keymap.set("n", "<leader>sv", ":sp!<CR>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- reload config
