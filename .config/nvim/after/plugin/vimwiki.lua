@@ -1,7 +1,7 @@
 -- vim.keymap.set("n", "<Leader>vs", ":VimwikiVSplitLink<CR>")
 vim.keymap.set("n", "<Leader>vi", ":vs \\| :VimwikiIndex<CR>")
 vim.keymap.set("n", "<Leader>wa", ":call VimwikiFindAllTasks()<CR>")
-vim.keymap.set("x", "_", "+f(<leader>pldt)a  <C-c>_", { remap = true})
+vim.keymap.set("x", "_", "+f(<leader>pldt)<C-c>", { remap = true})
 vim.keymap.set("n", "<leader>wx", ":call VimwikiFindIncompleteTasks()<CR>")
 vim.keymap.set("x", "<leader>-", ":VimwikiChangeSymbolTo -<CR>")
 vim.keymap.set("x", "<leader>gl", ":VimwikiChangeSymbolTo -<CR>:VimwikiToggleListItem <CR>")

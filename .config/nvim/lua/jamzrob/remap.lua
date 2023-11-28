@@ -19,10 +19,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- use system clipboard
-vim.keymap.set({ "n", "v" }, "P", [["+p]])
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
---vim.keymap.set("n", "<leader>P", [["+P]])
+vim.keymap.set("n", "<leader>P", [["+P]])
 
 -- vertical mode needs this
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -51,7 +51,7 @@ vim.keymap.set("n", "<C-n>", "zzgt")
 vim.keymap.set("n", "<C-P>", "zzgT")
 
 -- Split windows
-vim.keymap.set("n", "<leader>pv", ":Vex!<CR>")
+vim.keymap.set("n", "<leader>vv", ":Vex!<CR>")
 vim.keymap.set("n", "<leader>sv", ":Sex!<CR>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 

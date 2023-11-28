@@ -45,5 +45,8 @@ vim.opt.autowrite = true
 vim.opt.spr = true
 
 vim.cmd([[
-    set splitright 
+set nocompatible
+filetype plugin on
+syntax on
+set splitright 
 ]])
