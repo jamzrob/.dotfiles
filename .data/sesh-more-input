@@ -1,6 +1,6 @@
-/Users/jamesraubenheimer/.dotfiles
-/Users/jamesraubenheimer/.dotfiles/nvim
-/Users/jamesraubenheimer/my-dev
-/Users/jamesraubenheimer/Dropbox
-/Users/jamesraubenheimer/Desktop
-/Users/jamesraubenheimer/.zshrc
+$HOME/.dotfiles
+.$HOME/dotfiles/nvim
+.$HOME/my-dev
+.$HOME/Dropbox
+.$HOME/Desktop
+.$HOME/.zshrc
