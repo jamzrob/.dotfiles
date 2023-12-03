@@ -1,7 +1,6 @@
-$HOME/.dotfiles
-$HOME/dotfiles/nvim
-$HOME/my-dev
-$HOME/Dropbox
-$HOME/Desktop
-$HOME/.zshrc
-$HOME/wiki
+/Users/jraubenheimer/.dotfiles
+/Users/jraubenheimer/my-dev
+/Users/jraubenheimer/Dropbox
+/Users/jraubenheimer/Desktop
+/Users/jraubenheimer/.zshrc
+/Users/jraubenheimer/wiki
