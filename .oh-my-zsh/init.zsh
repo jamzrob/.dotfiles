@@ -104,3 +104,6 @@ alias tail_php='tail -f /var/log/httpd/php.log'
 export DEBUG_PRINT_LIMIT=1000000;
 export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 ## 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

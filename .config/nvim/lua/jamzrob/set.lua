@@ -36,7 +36,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- text width
-vim.opt.textwidth = 100
+vim.opt.textwidth = 80
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 -- auto writing
 vim.opt.autowrite = true
@@ -49,4 +51,6 @@ set nocompatible
 filetype plugin on
 syntax on
 set splitright 
+set formatoptions+=r
 ]])
+

@@ -103,6 +103,15 @@ require("packer").startup(function(use)
         -- calendar 
         use {'itchyny/calendar.vim'}
 
+
+        --- writing
+        use {'preservim/vim-pencil'}
+        use { 'rhysd/vim-grammarous' }
+        use { 'junegunn/goyo.vim' }
+        use { 'kamykn/spelunker.vim' }
+
+
+
     -- the first run will install packer and our plugins
     if packer_bootstrap then
         require("packer").sync()
