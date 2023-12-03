@@ -18,7 +18,7 @@ local config = {
     vimwikiRoot = '/$HOME/wiki',
     maxDepth = 3,
     ignoreFolders = { 'node_modules', '.git' },
-    rootWikiFolder = '_wiki',
+    rootWikiFolder = 'wiki',
     wikiConfig = { syntax='markdown', ext='md' }
 }
 
@@ -113,7 +113,7 @@ function _G.ProjectWikiOpen(name)
         local options = {
             sink = function(selected) ProjectWikiOpen(selected) end,
             source = wikis,
-            options = '--ansi --reverse --no-preview',
+            options = '--ansi --reverse --no-preview --delimiter / --with-nth 2',
             window = {
                 width = 0.3,
                 height = 0.6,

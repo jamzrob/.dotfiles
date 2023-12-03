@@ -90,7 +90,6 @@ require("packer").startup(function(use)
           requires = { 'nvim-tree/nvim-web-devicons', opt = true }
          }
 
- 
      -- LSP Saga
         use ({
             'nvimdev/lspsaga.nvim',
@@ -103,7 +102,6 @@ require("packer").startup(function(use)
         -- calendar 
         use {'itchyny/calendar.vim'}
 
-
         --- writing
         use {'preservim/vim-pencil'}
         use { 'rhysd/vim-grammarous' }
@@ -111,6 +109,7 @@ require("packer").startup(function(use)
         use { 'kamykn/spelunker.vim' }
 
 
+        use {'voldikss/vim-floaterm'}
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

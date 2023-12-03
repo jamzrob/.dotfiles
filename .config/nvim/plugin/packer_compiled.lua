@@ -233,6 +233,11 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-easy-align",
     url = "https://github.com/junegunn/vim-easy-align"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-fugitive",

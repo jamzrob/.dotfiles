@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 
---der moving lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+--der moving lines vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- keep cursor with J
@@ -66,6 +65,9 @@ vim.keymap.set("n", "<C-b>", "<C-^>")
 
 -- Open file tree
 vim.keymap.set("n", "<c-x>", ":Ex<CR>")
+
+-- Reload file
+vim.keymap.set("n", "<leader><CR>", ":so %<CR>");
 
 
 -- open config file
