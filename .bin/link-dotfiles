@@ -18,9 +18,10 @@ DOTFILES=(
 )
 
 for c in "${NEW_CONFIGS[@]}";do
-	rm -rf "${HOME}/.config/${dotfile}"
-	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+	rm -rf "${HOME}/.config/${c}"
+	mkdir "${HOME}/.config/${c}}"
 done
+
 for dotfile in "${DOTFILES[@]}";do
 	echo ${dotfile}
 	rm -rf "${HOME}/${dotfile}"
