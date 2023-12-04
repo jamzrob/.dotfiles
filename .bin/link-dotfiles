@@ -17,10 +17,6 @@ DOTFILES=(
     ".config/yabai/.yabairc"
 )
 
-for c in "${NEW_CONFIGS[@]}";do
-	mkdir "$HOME/.config/${c}}"
-done
-
 for dotfile in "${DOTFILES[@]}";do
 	ln -sfn "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
