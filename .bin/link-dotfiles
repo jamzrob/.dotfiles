@@ -3,7 +3,6 @@
 DIR=$HOME/.dotfiles
 
 DOTFILES=(
-    ".bin"
     ".zshrc"
     ".tmux.conf"
     ".gitconfig"
