@@ -12,7 +12,6 @@ fi
 
 export ZSH="~/.oh-my-zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-$HOST"
-export HISTFILE="$XDG_CONFIG_HOME/.zsh_history"
 
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
