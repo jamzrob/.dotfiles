@@ -1,6 +1,8 @@
 #!/bin/zsh
-if tmux has-session -t watch-dotfiles > /dev/null 2>&1; then
+if tmux has-session -t watch > /dev/null 2>&1; then
 else
-    tmux new-session -ds watch-dotfiles -c "gitwatch ~/.dotfiles"
+    tmux new-session -ds watch -c ~/.dotfiles -n pull
+    tmux send-keys -t watch "git rp" C-m
+    tmux send-keys -t watch "gitwatch ." C-m
 fi
 
