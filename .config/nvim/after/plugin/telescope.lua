@@ -37,6 +37,12 @@ keyset('n', '<leader>vrw', function()
         cwd = '~/vimwiki',
     })
 end)
+keyset('n', '<leader>vrd', function()
+    builtin.git_files({
+        prompt_title = "< dotfiles >",
+        cwd = '~/.dotfiles',
+    })
+end)
 keyset('n', '<leader>vrf', function()
     builtin.live_grep({
         prompt_title = "< nvim >",

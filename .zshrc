@@ -1,23 +1,33 @@
+# EXPORT
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state" 
+export XDG_RUNTIME_DIR="/run/user/$UID" 
+echo "Testing"
+
+
 ## OH MY ZSH
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$XDG_CONFIG_HOME/.oh-my-zsh"
+export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-$HOST"
+export HISTFILE="$XDG_CONFIG_HOME/.zsh_history"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
-ZSH_TMUX_AUTOSTART=true
+export ZSH_THEME="powerlevel10k/powerlevel10k"
+export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
+export ZSH_TMUX_AUTOSTART=true
 
-NVM_LAZY_LOAD=true
-ZSH_PYENV_LAZY_VIRTUALENV=true
+export NVM_LAZY_LOAD=true
+export ZSH_PYENV_LAZY_VIRTUALENV=true
 plugins+=(tmux) # tksv kill serve 
 plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
-plugins+=(pyenv-lazy nvm-lazy nvm-lazy zsh-rvm-lazy)
+plugins+=(pyenv-lazy nvm-lazy zsh-rvm-lazy)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,32 +59,37 @@ alias rtmux="tmux source-file ~/.tmux.conf"
 alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
 alias rskhd="skhd --restart-service"
 
-# EXPORT
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state" 
-export XDG_RUNTIME_DIR="/run/user/$UID" 
 
-
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
 export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
 export CLOUDSDK_CONFIG="$XDG_CONFIG_HOME/google-cloud-sdk"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/.docker"
 export PYENV_VERSION="3.8.16"
 export PYENV_ROOT="$XDG_CONFIG_HOME/.pyenv"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
+export GEM_HOME="$XDG_DATA_HOME/.gem"
+export GNUPGHOME="$XDG_DATA_HOME/.gnupg"
+export RBENV_ROOT="$XDG_DATA_HOME/.rbenv"
+
+
+
+
+
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export EDITOR="nvim"
 export CLOUDSDK_PYTHON="python3.10"
 
-export PATH="$HOME/.config/.pyenv/:$PATH"
+export PATH="$XDG_DATA_HOME/.pyenv/:$PATH"
+export PATH="$XDG_DATA_HOME/.bun/bin:$PATH"
+export PATH="$XDG_DATA_HOME/.bin:$PATH"
+export PATH="$XDG_DATA_HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.local/scripts/:$PATH"
-export PATH="$HOME/.bun/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.dotfiles/.bin/:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 export PATH="/opt/homebrew/opt/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="$HOME/.config/.jenv/bin:$PATH"
 
 timezsh() {
   shell=${1-$SHELL}

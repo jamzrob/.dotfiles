@@ -16,7 +16,7 @@ vim.opt.wrap = true
 -- No swaps long running todos
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+vim.opt.undodir = os.getenv("XDG_CONFIG_HOME") .. "/undo"
 vim.opt.undofile = true
 
 -- search highlights
@@ -45,6 +45,7 @@ vim.opt.autowrite = true
 
 -- move jarring splits outta here
 vim.opt.spr = true
+
 
 vim.cmd([[
 set nocompatible

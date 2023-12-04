@@ -4,7 +4,12 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     find ~/development/ ~/my-dev -mindepth 1 -maxdepth 1 -type d > $HOME/.dotfiles/.data/sesh-input
-    cat $HOME/.dotfiles/.data/sesh-more-input >>  $HOME/.dotfiles/.data/sesh-input
+    if [[ -z $IS_ETSY ]]; then
+        cat $HOME/.dotfiles/.data/my-input >>  $HOME/.dotfiles/.data/sesh-input
+    else
+        cat $HOME/.dotfiles/.data/etsy-input >>  $HOME/.dotfiles/.data/sesh-input
+    fi
+
     selected=$(cat $HOME/.dotfiles/.data/sesh-input | fzf --delimiter / --with-nth -1)
 fi
 

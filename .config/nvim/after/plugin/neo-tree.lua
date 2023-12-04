@@ -1,3 +1,19 @@
+require("neo-tree").setup({
+    window = {
+        position="float",
+       -- disable fuzzy finder
+       mappings = {
+           ["/"] = "noop"
+       }
+    },
+    filesystem = {
+        filtered_items = {
+            visible = true,
+        },
+       hijack_netrw_behavior = "disabled",
+    }
+})
 
-require("neo-tree").setup({});
-
+--vim.keymap.set("n", "<leader>pv", ":vsplit . <CR>")
+--vim.keymap.set("n", "<leader>sv", ":split . <CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree toggle current reveal_force_cwd<CR>")
