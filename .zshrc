@@ -58,7 +58,7 @@ alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
 alias rskhd="skhd --restart-service"
 
 
-export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
+export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
 export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
