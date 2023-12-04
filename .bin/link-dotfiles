@@ -3,7 +3,7 @@
 DIR=$HOME/.dotfiles
 
 
-DOTFILES_HOME=(
+DOTFILES=(
     ".zshrc"
     ".config/tmux/.tmux.conf"
     ".config/nvim"
