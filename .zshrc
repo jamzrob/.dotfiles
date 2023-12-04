@@ -107,3 +107,6 @@ alias myprs="gh pr list -A jraubenheimer -s all -L 80"
 alias tail_php='tail -f /var/log/httpd/php.log'
 export DEBUG_PRINT_LIMIT=1000000;
 export PATH=${HOME}/google-cloud-sdk/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
