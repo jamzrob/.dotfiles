@@ -1,6 +1,6 @@
 #!/bin/zsh
 if tmux has-session -t watch-dotfiles > /dev/null 2>&1; then
 else
-    tmux new-session -ds watch-dotfiles 
+    tmux new-session -ds watch-dotfiles -c "gitwatch ~/.dotfiles"
 fi
 
