@@ -3,7 +3,7 @@ if tmux has-session -t watch > /dev/null 2>&1; then
 else
     tmux new-session -ds watch -c ~/.dotfiles -n pull
     tmux send-keys -t watch:pull "git rp" C-m
-    tmux new-window -t  "git rp" C-m
+    tmux new-window -t watch:push "gitwach ." C-m
     tmux send-keys -t watch "gitwatch ." C-m
 fi
 
