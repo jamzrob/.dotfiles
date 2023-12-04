@@ -17,6 +17,10 @@ DOTFILES=(
     ".config/yabai/.yabairc"
 )
 
+for c in "${NEW_CONFIGS[@]}";do
+	rm -rf "${HOME}/.config/${dotfile}"
+	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+done
 for dotfile in "${DOTFILES[@]}";do
 	echo ${dotfile}
 	rm -rf "${HOME}/${dotfile}"
