@@ -14,22 +14,6 @@ DOTFILES_HOME=(
     ".yabairc"
 )
 
-
-DOTFILES_CONFIG=(
-    ".zshrc"
-    ".tmux.conf"
-    ".gitconfig"
-    ".config/nvim"
-    ".config/tmuxinator"
-    ".config/skhd"
-    ".ssh/config"
-    ".yabairc"
-)
-
-LOCATIONS=(
-
-)
-
 for dotfile in "${DOTFILES[@]}";do
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
