@@ -4,6 +4,6 @@ else
     tmux new-session -ds watch -c ~/.dotfiles -n "pull"
     tmux send-keys -t watch:0 "git rp" C-m
     tmux new-window -t watch:1 -n "push"
-    tmux send-keys -t watch:1 "gitwatch ." C-m
+    tmux send-keys -t watch:1 "gitwatch -r origin ." C-m
 fi
 

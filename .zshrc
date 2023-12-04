@@ -59,6 +59,7 @@ alias rskhd="skhd --restart-service"
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
+
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
 export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
 export CLOUDSDK_CONFIG="$XDG_CONFIG_HOME/google-cloud-sdk"
