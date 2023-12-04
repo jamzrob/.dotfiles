@@ -4,9 +4,6 @@ DIR=$HOME/.dotfiles
 
 NEW_CONFIGS = (
 "tmux",
-"nvim"
-"tmuxinator",
-"skhd"
 "yabairc"
 )
 
