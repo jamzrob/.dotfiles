@@ -1,8 +1,9 @@
+-- pass to setup along with your other options
+require("nvim-tree").setup {
+  hijack_netrw = false,
+  disable_netrw = false,
+}
 
-  require("nvim-tree").setup {
-      actions = {
-          open_file = {
-              quit_on_open=true,
-          }
-      }
-  }
+
+vim.api.nvim_set_keymap("n", "<C-h>", ":NvimTreeToggle<cr>", {silent = true, noremap = true})
+

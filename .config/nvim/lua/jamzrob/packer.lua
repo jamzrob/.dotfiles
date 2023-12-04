@@ -113,12 +113,24 @@ require("packer").startup(function(use)
         use {'voldikss/vim-floaterm'}
 
         -- File tree
+        -- - hop up a level, ~ go home
+        use {"tpope/vim-vinegar"}
         use {
           'nvim-tree/nvim-tree.lua',
           requires = {
             'nvim-tree/nvim-web-devicons', -- optional
           },
         }
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    }
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

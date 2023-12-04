@@ -157,6 +157,16 @@ _G.packer_plugins = {
     path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -257,6 +267,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/vim-pencil",
     url = "https://github.com/preservim/vim-pencil"
+  },
+  ["vim-vinegar"] = {
+    loaded = true,
+    path = "/Users/jamesraubenheimer/.local/share/nvim/site/pack/packer/start/vim-vinegar",
+    url = "https://github.com/tpope/vim-vinegar"
   },
   vimwiki = {
     loaded = true,
