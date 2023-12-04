@@ -1,7 +1,7 @@
 #!/bin/zsh
 if tmux has-session -t watch-dotfiles > /dev/null 2>&1; then :
 else
-    tmux new-session -d -s watch-dotfiles -n foo bar
+    tmux new-session -ds watch-dotfiles 
     tmux new-window -d -t auto-session
 fi
 
