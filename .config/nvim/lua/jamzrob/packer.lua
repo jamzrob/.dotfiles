@@ -109,7 +109,16 @@ require("packer").startup(function(use)
         use { 'kamykn/spelunker.vim' }
 
 
+        -- floating term
         use {'voldikss/vim-floaterm'}
+
+        -- File tree
+        use {
+          'nvim-tree/nvim-tree.lua',
+          requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+          },
+        }
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

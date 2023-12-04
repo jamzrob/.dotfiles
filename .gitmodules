@@ -7,3 +7,18 @@
 [submodule ".oh-my-zsh/plugins/zsh-syntax-highlighting"]
 	path = .oh-my-zsh/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule ".oh-my-zsh/themes/powerlevel10k"]
+	path = .oh-my-zsh/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".oh-my-zsh/plugins/pyenv-lazy"]
+	path = .oh-my-zsh/plugins/pyenv-lazy
+	url = git@github.com:davidparsson/zsh-pyenv-lazy.git
+[submodule ".oh-my-zsh/plugins/nvm-lazy"]
+	path = .oh-my-zsh/plugins/nvm-lazy
+	url = git@github.com:davidparsson/zsh-nvm-lazy.git
+[submodule ".oh-my-zsh/plugins/zsh-rvm-lazy"]
+	path = .oh-my-zsh/plugins/zsh-rvm-lazy
+	url = git@github.com:FrederickGeek8/zsh-rvm-lazy.git
+[submodule ".oh-my-zsh/plugins/zsh-vi-mode"]
+	path = .oh-my-zsh/plugins/zsh-vi-mode
+	url = git@github.com:jeffreytse/zsh-vi-mode.git
