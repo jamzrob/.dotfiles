@@ -2,7 +2,7 @@
 
 DIR=$HOME/.dotfiles
 
-NEW_CONFIGS = (
+NEW_CONFIGS=(
 "tmux",
 "yabairc"
 )
