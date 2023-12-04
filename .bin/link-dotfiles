@@ -2,11 +2,6 @@
 
 DIR=$HOME/.dotfiles
 
-NEW_CONFIGS=(
-"tmux",
-"yabairc"
-)
-
 DOTFILES=(
     ".zshrc"
     ".config/tmux/.tmux.conf"
