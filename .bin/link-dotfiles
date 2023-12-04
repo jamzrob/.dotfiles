@@ -2,7 +2,20 @@
 
 DIR=$HOME/.dotfiles
 
-DOTFILES=(
+
+DOTFILES_HOME=(
+    ".zshrc"
+    ".tmux.conf"
+    ".gitconfig"
+    ".config/nvim"
+    ".config/tmuxinator"
+    ".config/skhd"
+    ".ssh/config"
+    ".yabairc"
+)
+
+
+DOTFILES_CONFIG=(
     ".zshrc"
     ".tmux.conf"
     ".gitconfig"
