@@ -6,7 +6,7 @@ DIR=$HOME/.dotfiles
 DOTFILES_HOME=(
     ".zshrc"
     ".config/tmux/.tmux.conf"
-    ".gitconfig"
+    ".config/.gitconfig"
     ".config/nvim"
     ".config/tmuxinator"
     ".config/skhd"
