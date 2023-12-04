@@ -1,9 +1,9 @@
 #!/bin/zsh
 if tmux has-session -t watch > /dev/null 2>&1; then
 else
-    tmux new-session -ds watch -c ~/.dotfiles -n pull
-    tmux send-keys -t watch:pull "git rp" C-m
-    tmux new-window -t watch:push
-    tmux send-keys -t watc:push "gitwatch ." C-m
+    tmux new-session -ds watch -c ~/.dotfiles -n "pull"
+    tmux send-keys -t watch:0 "git rp" C-m
+    tmux new-window -t watch:1 -n "push"
+    tmux send-keys -t watch:1 "gitwatch ." C-m
 fi
 
