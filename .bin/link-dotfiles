@@ -18,7 +18,6 @@ DOTFILES=(
 )
 
 for c in "${NEW_CONFIGS[@]}";do
-	rm -rf "$HOME/.config/${c}"
 	mkdir "$HOME/.config/${c}}"
 done
 
