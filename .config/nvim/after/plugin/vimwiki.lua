@@ -55,12 +55,11 @@ end
 -- function to update g:vimwiki_list config item from list of subfolder names (append project wikis)
 --   this way, orginal <Leader>ws will get new project wikis in the list and also keep ones from config
 local function updateVimwikiList(folders)
-    local new_list = vim.fn.copy(vimwiki_list_orig)
-
+    local new_list = {}
     for _, f in ipairs(folders) do
         local path = ""
         if string.find(f, config.rootWikiFolder) then
-            path = config.projectsFolder..f
+            path = f
         else
             path = f
         end
@@ -73,7 +72,9 @@ local function updateVimwikiList(folders)
             path_html = '~/vimwiki_html/'..filename,
             custom_wiki2html = '~/wiki/wiki2html.sh',
             generated_links_caption= 1,
-            links_space_char='_'
+            links_space_char='_',
+            diary_rel_path="../daily/"
+
         }
         table.insert(new_list, item)
     end
@@ -108,7 +109,6 @@ function _G.ProjectWikiOpen(name)
     -- show fzf wiki search if no wiki passed
     if not name then
         local wikis = searchForWikis()
-        updateVimwikiList(wikis)
 ;
         local options = {
             sink = function(selected) ProjectWikiOpen(selected) end,
@@ -139,7 +139,7 @@ function _G.MyWikiOpen(name)
         updateVimwikiList(non)
 ;
         local options = {
-            sink = function(selected) ProjectWikiOpen(selected) end,
+            sink = function(selected) MyWikiOpen(selected) end,
             source = non,
             options = '--ansi --reverse --no-preview --delimiter / --with-nth 6',
             window = {
@@ -153,7 +153,7 @@ function _G.MyWikiOpen(name)
         for i, v in ipairs(vim.g.vimwiki_list) do
             if v.path == name or v.path == config.projectsFolder..name then
                 vim.fn.call('vimwiki#base#goto_index',{i})
-                return
+                return;
             end
         end
         print("Error. Selected project wiki not found")
