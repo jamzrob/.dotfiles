@@ -52,7 +52,7 @@ vim.keymap.set("n", "<C-P>", "zzgT")
 -- Split windows
 vim.keymap.set("n", "<leader>pv", ":Vex!<CR>")
 vim.keymap.set("n", "<leader>sv", ":sp!<CR>")
-vim.keymap.set("n", "<leader>E", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- reload config
 -- vim.keymap.set("n", "<leader>CR", ":source ~/.config/nvim/init.lua")
