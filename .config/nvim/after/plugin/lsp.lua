@@ -106,6 +106,10 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 vim.cmd([[autocmd BufWritePost *.html.erb silent! !htmlbeautifier %]])
 vim.cmd([[autocmd BufWritePost *.html silent! !htmlbeautifier %]])
+vim.cmd([[autocmd BufWritePost *.ts EslintFixAll]])
+vim.cmd([[autocmd BufWritePost *.tsx EslintFixAll]])
+vim.cmd([[autocmd BufWritePost *.jsx EslintFixAll]])
+vim.cmd([[autocmd BufWritePost *.js EslintFixAll]])
 
 lsp.setup()
 
