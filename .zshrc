@@ -3,6 +3,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state" 
 export XDG_RUNTIME_DIR="/run/user/$UID" 
+export SHELL="/bin/zsh"
 
 
 ## OH MY ZSH
@@ -15,7 +16,6 @@ export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-$HOST"
 
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
-export ZSH_TMUX_AUTOSTART=true
 
 export NVM_LAZY_LOAD=true
 export ZSH_PYENV_LAZY_VIRTUALENV=true
