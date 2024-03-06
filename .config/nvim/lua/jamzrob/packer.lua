@@ -30,7 +30,11 @@ require("packer").startup(function(use)
     use("nvim-lua/plenary.nvim")
     use("nvim-telescope/telescope.nvim")
     use("tpope/vim-fugitive")
-    use("ThePrimeagen/harpoon")
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use {
         'junegunn/fzf.vim',
         requires = { 'junegunn/fzf', run = ':call fzf#install()' }
@@ -137,6 +141,9 @@ require("packer").startup(function(use)
 
         -- Git
         use { 'lewis6991/gitsigns.nvim' }
+
+        -- Oil 
+        use { 'stevearc/oil.nvim' }
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then
