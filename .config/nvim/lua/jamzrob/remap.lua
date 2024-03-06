@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Tab navigation
-vim.keymap.set("n", "<leader>T", "zz:tabnew<CR>")
+vim.keymap.set("n", "<leader>t", "zz:tabnew<CR>")
 vim.keymap.set("n", "<C-n>", "zzgt")
 vim.keymap.set("n", "<C-P>", "zzgT")
 
@@ -79,7 +79,7 @@ vim.api.nvim_set_keymap('n', '<leader>vrf', [[:lua OpenFileInVerticalSplit('~/.d
     { noremap = true, silent = true })
 
 -- etsy tests
-vim.api.nvim_set_keymap('n', '<leader>t', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>T', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rt', [[:!run_test %<CR>]], { noremap = true, silent = true })
 
 
@@ -91,6 +91,12 @@ function _G.log_word()
         vim.cmd('normal! viw"1P')
     end
 end
+
+function _G.packer_sync()
+    vim.cmd('normal! :PackerSync<CR>')
+end
+
+vim.api.nvim_command([[command! -nargs=? PS lua packer_sync()]])
 
 vim.api.nvim_command([[command! -nargs=? LogWord lua log_word(<f-args>)]])
 vim.api.nvim_set_keymap('n', '<Leader>cl', ":LogWord<CR>", { noremap = true, silent = true })

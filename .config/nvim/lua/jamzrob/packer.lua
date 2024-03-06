@@ -65,7 +65,9 @@ require("packer").startup(function(use)
 
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' }
+            { 'hrsh7th/cmp-buffer' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'onsails/lspkind-nvim' }
         }
     }
     use { 'mfussenegger/nvim-lint' }
@@ -90,15 +92,6 @@ require("packer").startup(function(use)
           requires = { 'nvim-tree/nvim-web-devicons', opt = true }
          }
 
-     -- LSP Saga
-        use ({
-            'nvimdev/lspsaga.nvim',
-            after = 'nvim-lspconfig',
-            config = function()
-                require('lspsaga').setup({})
-            end,
-        })
-
         -- calendar 
         use {'itchyny/calendar.vim'}
 
@@ -121,16 +114,29 @@ require("packer").startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
           },
         }
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+
+        use({'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end})
+        use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v3.x",
+            requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            }
         }
-    }
+
+        use { 'nvim-tree/nvim-web-devicons' }
+
+        -- Dashboard
+        use { 'mhinz/vim-startify'}
+
+        -- Tab switching
+        use { 'akinsho/nvim-bufferline.lua' }
+
+        -- Git
+        use { 'lewis6991/gitsigns.nvim' }
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then
