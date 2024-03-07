@@ -3,5 +3,5 @@
 .data/sesh-input
 .data/sesh-more-input
 .config/nvim/plugin/packer_compiled.lua
-
+.config/nvim/plugin/*
 
