@@ -22,6 +22,7 @@
 
 [core]
         symlinks = true
+	autocrlf = false
 
 [push]
         autoSetupRemote = true

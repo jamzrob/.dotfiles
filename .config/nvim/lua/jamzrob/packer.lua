@@ -31,14 +31,16 @@ require("packer").startup(function(use)
     use("nvim-telescope/telescope.nvim")
     use("tpope/vim-fugitive")
     use {
+        'junegunn/fzf.vim',
+        requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+     }
+
+     -- Harpoon
+     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
         requires = { {"nvim-lua/plenary.nvim"} }
     }
-    use {
-        'junegunn/fzf.vim',
-        requires = { 'junegunn/fzf', run = ':call fzf#install()' }
-     }
 
     -- Colors
     use { "ellisonleao/gruvbox.nvim" }
