@@ -5,7 +5,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state" 
 export XDG_RUNTIME_DIR="/run/user/$UID" 
-export SHELL="/bin/zsh"
 
 
 ## OH MY ZSH
@@ -28,8 +27,6 @@ plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 plugins+=(zsh-nvm-lazy-load)
-
-autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,4 +116,3 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
