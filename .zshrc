@@ -26,8 +26,10 @@ plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
-plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(zsh-nvm-lazy-load)
+
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
