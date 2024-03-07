@@ -4,7 +4,6 @@ export POWERLEVEL9K_MODE='nerdfont-complete'
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state" 
-export XDG_RUNTIME_DIR="/run/user/$UID" 
 
 
 ## OH MY ZSH
@@ -46,6 +45,7 @@ bindkey '^ ' autosuggest-accept # ctrl + space
 ## ALIAS
 alias todo="~/my-dev/todoer/target/release/todo"
 alias past="~/my-dev/todoer/target/release/past_todo"
+alias etsypword="op read op://Private/etsycorp.com/password"
 alias gostreaks="ssh -i ~/.ssh/Default ubuntu@44.202.59.102"
 alias vim="nvim"
 alias mux="tmuxinator"
@@ -116,3 +116,4 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
