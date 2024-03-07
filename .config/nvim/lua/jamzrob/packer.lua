@@ -176,9 +176,6 @@ require("packer").startup(function(use)
     use { 'windwp/nvim-ts-autotag' }
     use { 'windwp/nvim-autopairs' }
 
-    -- Get better look of tabs
-    use { 'akinsho/nvim-bufferline.lua' }
-
     -- Git 
     use { 'dinhhuy258/git.nvim' }
 
