@@ -114,9 +114,12 @@ alias myprs="gh pr list -A jraubenheimer -s all -L 80"
 alias tail_php='tail -f /var/log/httpd/php.log'
 export DEBUG_PRINT_LIMIT=1000000;
 export PATH=${HOME}/google-cloud-sdk/bin:$PATH
+export PATH=${HOME}/development/Flutter/bin:$PATH
+alias etsypass="op read op://Private/etsycorp.com/password"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
