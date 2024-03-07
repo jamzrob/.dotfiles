@@ -67,15 +67,9 @@ require("packer").startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' },
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
-<<<<<<< HEAD
-            { 'L3MON4D3/LuaSnip' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'onsails/lspkind-nvim' },
-=======
             { 'hrsh7th/cmp-buffer' },
             { 'L3MON4D3/LuaSnip' },
             { 'onsails/lspkind-nvim' }
->>>>>>> 776b7ed2c4eb0605b84b377e3d2e38681a4f3166
         }
     }
     use { 'neovim/nvim-lspconfig' }
