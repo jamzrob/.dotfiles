@@ -17,3 +17,4 @@ require("neo-tree").setup({
 --vim.keymap.set("n", "<leader>pv", ":vsplit . <CR>")
 --vim.keymap.set("n", "<leader>sv", ":split . <CR>")
 vim.keymap.set("n", "<leader>E", ":Neotree toggle current reveal_force_cwd<CR>")
+vim.keymap.set("n", "<C-h>", ":Neotree toggle reveal position=left<CR>")

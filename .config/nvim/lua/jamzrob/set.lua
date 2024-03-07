@@ -46,6 +46,8 @@ vim.opt.autowrite = true
 -- move jarring splits outta here
 vim.opt.spr = true
 
+vim.opt.clipboard="unnamedplus"
+
 
 vim.cmd([[
 set nocompatible

@@ -17,12 +17,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- delete to void
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- use system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set("n", "<leader>P", [["+P]])
-
 -- vertical mode needs this
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
@@ -32,12 +26,6 @@ vim.keymap.set("n", "Q", "<nop>")
 -- switch projects
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
--- quickfix navigation
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
 -- replace word you are on
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -45,9 +33,7 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Tab navigation
-vim.keymap.set("n", "<leader>T", "zz:tabnew<CR>")
-vim.keymap.set("n", "<C-n>", "zzgt")
-vim.keymap.set("n", "<C-P>", "zzgT")
+vim.keymap.set("n", "<leader>t", "zz:tabnew<CR>")
 
 -- Split windows
 vim.keymap.set("n", "<leader>pv", ":Vex!<CR>")
@@ -69,18 +55,15 @@ vim.keymap.set("n", "<c-x>", ":Ex<CR>")
 -- Reload file
 vim.keymap.set("n", "<leader><CR>", ":so %<CR>");
 
+-- Yank file path
+vim.keymap.set("n", "cp", ":let @\" = expand(\"%\")<cr>");
+
 
 -- open config file
 function OpenFileInVerticalSplit(path)
     vim.cmd('vsp ' .. path)
 end
 
-vim.api.nvim_set_keymap('n', '<leader>vrf', [[:lua OpenFileInVerticalSplit('~/.dotfiles/.config/nvim')<CR>]],
-    { noremap = true, silent = true })
-
--- etsy tests
-vim.api.nvim_set_keymap('n', '<leader>t', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>rt', [[:!run_test %<CR>]], { noremap = true, silent = true })
 
 
 -- wrap wonder under cursor in console.log
@@ -93,5 +76,22 @@ function _G.log_word()
 end
 
 vim.api.nvim_command([[command! -nargs=? LogWord lua log_word(<f-args>)]])
-vim.api.nvim_set_keymap('n', '<Leader>cl', ":LogWord<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cl', ":LogWord<CR>", { noremap = true, silent = true })
+
+
+
+--  ETSY
+vim.api.nvim_set_keymap('n', '<leader>T', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rt', [[:!run_test %<CR>]], { noremap = true, silent = true })
+
+function _G.git_link()
+    local path = vim.fn.expand('%');
+    local url = "https://github.etsycorp.com/Engineering/Etsyweb/tree/main/" .. path;
+    vim.fn.setreg('"', url)
+    print(url)
+end
+vim.api.nvim_command([[command! GitLink lua git_link()]])
+
+
+local M = {}
 

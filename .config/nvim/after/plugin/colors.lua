@@ -38,4 +38,4 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "SignColumn", {fg = "#595959", bg="#3b2e2b"})
     vim.opt.signcolumn = "no"
 end
-ColorMyPencils("rose-pine")
+ColorMyPencils("gruvbox")

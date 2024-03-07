@@ -19,6 +19,8 @@
         rclone = clone --recurse-submodules
         cip = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
         lazypush = "!f() { git add -A && git commit --amend --no-edit && git push --force-with-lease; }; f"
+        lazyupdate = "!f() { git checkout main && git pull --recurse-submodules && git checkout - && git rebase main && git push --force-with-lease; }; f"
+        lazyrebase = "!f() { git checkout main && git pull --recurse-submodules && git checkout - && git rebase main }; f"
 
 [core]
         symlinks = true

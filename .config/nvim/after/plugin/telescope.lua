@@ -100,7 +100,7 @@ keyset('v', '<leader>fg', function()
     local text = vim.getVisualSelection()
 	builtin.live_grep({ default_text = text })
 end)
-keyset('n', '<leader>fs', function()
+keyset('n', '<leader>fS', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 

@@ -1,7 +1,7 @@
 
 require('lualine').setup {
   options = {
-      theme = "gruvbox",
+    theme = "gruvbox",
     icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
@@ -24,7 +24,7 @@ require('lualine').setup {
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {{'filename', path =1}},
     lualine_x = {'encoding', 'filetype'},
-    lualine_y = {'progress'},
+    lualine_y = {'lsp_progress'},
     lualine_z = {'hostname'}
   },
   inactive_sections = {

@@ -43,10 +43,22 @@ wk.register({
         L = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Find Workspace Symbols" },
         o = { "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<CR>", "Find Document Diagnostics" },
         O = { "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>", "Find Workspace Diagnostics" },
+        f = {  "Search file path" },
         ["?"] = { "<cmd>lua require('telescope.builtin').builtin()<CR>", "Find Telescope Help" },
     },
 }, { prefix = "<leader>" })
 
+wk.register({
+    cr = {
+        name = "abolish",
+        s = { "snake_case" },
+        c = { "camelCase" },
+        p = { "PascalCase" },
+        u = { "SNAKE_UPPERCASE" },
+        ["-"] = { "dash-case" },
+        ["."] = { "dot.case" },
+    },
+}, { prefix = "<leader>" })
 -- make another mapping
 
 

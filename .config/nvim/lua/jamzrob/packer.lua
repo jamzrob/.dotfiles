@@ -1,21 +1,18 @@
 -- ensure the packer plugin manager is installed
 local ensure_packer = function() local fn = vim.fn
-    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim' if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
         vim.cmd [[packadd packer.nvim]]
         return true
     end
     return false
 end
-
 local packer_bootstrap = ensure_packer()
 
 require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
-
-    --- VimWiki
+--- VimWiki
     use { 'vimwiki/vimwiki' }
 
     -- Treesitter
@@ -62,12 +59,22 @@ require("packer").startup(function(use)
                 end,
             },
             { 'williamboman/mason-lspconfig.nvim' },
-
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' }
+            { 'L3MON4D3/LuaSnip' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'onsails/lspkind-nvim' },
         }
     }
+    use { 'neovim/nvim-lspconfig' }
+        use ({
+        'nvimdev/lspsaga.nvim',
+        after = 'nvim-lspconfig',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+    })
+
     use { 'mfussenegger/nvim-lint' }
 
     -- CoPilot
@@ -89,15 +96,6 @@ require("packer").startup(function(use)
           'nvim-lualine/lualine.nvim',
           requires = { 'nvim-tree/nvim-web-devicons', opt = true }
          }
-
-     -- LSP Saga
-        use ({
-            'nvimdev/lspsaga.nvim',
-            after = 'nvim-lspconfig',
-            config = function()
-                require('lspsaga').setup({})
-            end,
-        })
 
         -- calendar 
         use {'itchyny/calendar.vim'}
@@ -131,6 +129,56 @@ require("packer").startup(function(use)
         -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
+
+    use {
+      "antosha417/nvim-lsp-file-operations",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
+      },
+      config = function()
+        require("lsp-file-operations").setup()
+      end,
+    }
+
+    -- case converter
+    use { "tpope/vim-abolish" }
+
+    -- clipboard
+    use { 'ojroques/vim-oscyank', branch = "main"}
+
+    -- Typescript
+    use { 'leafgarland/typescript-vim' }
+
+    -- CLosing tags and brackets
+    use { 'windwp/nvim-ts-autotag' }
+    use { 'windwp/nvim-autopairs' }
+
+    -- Get better look of tabs
+    use { 'akinsho/nvim-bufferline.lua' }
+
+    -- Git 
+    use { 'dinhhuy258/git.nvim' }
+
+    -- Quickfix list toggle
+    use {"milkypostman/vim-togglelist"}
+
+    -- Github PRs
+    use {
+      'pwntester/octo.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+        -- OR 'ibhagwan/fzf-lua',
+        'nvim-tree/nvim-web-devicons',
+      },
+      config = function ()
+        require"octo".setup()
+      end
+    }
+
+    -- Lsp loading status
+    use 'arkav/lualine-lsp-progress'
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

@@ -25,7 +25,7 @@ plugins+=(copyfile)
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
-plugins+=(pyenv-lazy zsh-nvm-lazy)
+plugins+=(zsh-nvm-lazy)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,9 +87,9 @@ export PATH="$XDG_DATA_HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.local/scripts/:$PATH"
 export PATH="$HOME/.dotfiles/.bin/:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
-export PATH="/opt/homebrew/opt/bin:$PATH"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+#export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+#export PATH="/opt/homebrew/opt/bin:$PATH"
+#export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 timezsh() {
   shell=${1-$SHELL}
@@ -112,4 +112,4 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(/opt/homebrew/bin/brew shellenv)"
