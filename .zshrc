@@ -27,9 +27,10 @@ plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(zsh-nvm-lazy-load)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
-autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
+
+autoload -Uz compinit && compinit
 
 bindkey -s "^f" "tmux-sessionizer\n"
 bindkey -s "^h" "cheat\n"
