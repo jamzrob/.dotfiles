@@ -5,7 +5,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state" 
 
-
 ## OH MY ZSH
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -24,8 +23,10 @@ plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
-plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(zsh-nvm-lazy-load)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -Uz compinit; compinit
 
 source $ZSH/oh-my-zsh.sh
 
