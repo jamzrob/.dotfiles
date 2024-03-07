@@ -118,4 +118,4 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
