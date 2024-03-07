@@ -27,7 +27,7 @@ plugins+=(copyfile)
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
-plugins+=(zsh-nvm-lazy)
+plugins+=(zsh-nvm-lazy-load)
 
 source $ZSH/oh-my-zsh.sh
 

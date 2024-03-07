@@ -22,3 +22,6 @@
 [submodule ".oh-my-zsh/plugins/zsh-nvm"]
 	path = .oh-my-zsh/plugins/zsh-nvm
 	url = git@github.com:lukechilds/zsh-nvm.git
+[submodule ".oh-my-zsh/plugins/zsh-nvm-lazy-load"]
+	path = .oh-my-zsh/plugins/zsh-nvm-lazy-load
+	url = git@github.com:undg/zsh-nvm-lazy-load.git
