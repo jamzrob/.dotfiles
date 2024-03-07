@@ -10,6 +10,7 @@ windows:
     - vim
   - git:
     - ssh dev
+    - ew
     - git status
   - run:
     - ssh dev
