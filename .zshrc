@@ -24,7 +24,9 @@ plugins+=(copyfile)
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
-plugins+=(zsh-nvm-lazy-load zsh-completions)
+plugins+=(zsh-nvm-lazy-load)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
