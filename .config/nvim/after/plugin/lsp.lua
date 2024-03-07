@@ -21,6 +21,7 @@ local lsp = require('lsp-zero').preset(preset)
 
 lsp.ensure_installed({
     'vtsls',
+    'eslint',
     'lua_ls',
     'rust_analyzer',
     'pyright',

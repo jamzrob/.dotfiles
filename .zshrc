@@ -1,3 +1,5 @@
+POWERLEVEL9K_MODE='nerdfont-complete'
+export POWERLEVEL9K_MODE='nerdfont-complete'
 # EXPORT
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"

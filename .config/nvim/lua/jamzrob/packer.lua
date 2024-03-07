@@ -27,11 +27,17 @@ require("packer").startup(function(use)
     use("nvim-lua/plenary.nvim")
     use("nvim-telescope/telescope.nvim")
     use("tpope/vim-fugitive")
-    use("ThePrimeagen/harpoon")
     use {
         'junegunn/fzf.vim',
         requires = { 'junegunn/fzf', run = ':call fzf#install()' }
      }
+
+     -- Harpoon
+     use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 
     -- Colors
     use { "ellisonleao/gruvbox.nvim" }
@@ -61,9 +67,15 @@ require("packer").startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' },
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
+<<<<<<< HEAD
             { 'L3MON4D3/LuaSnip' },
             { 'hrsh7th/cmp-buffer' },
             { 'onsails/lspkind-nvim' },
+=======
+            { 'hrsh7th/cmp-buffer' },
+            { 'L3MON4D3/LuaSnip' },
+            { 'onsails/lspkind-nvim' }
+>>>>>>> 776b7ed2c4eb0605b84b377e3d2e38681a4f3166
         }
     }
     use { 'neovim/nvim-lspconfig' }
@@ -119,16 +131,32 @@ require("packer").startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
           },
         }
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+
+        use({'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end})
+        use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v3.x",
+            requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            }
         }
-    }
+
+        use { 'nvim-tree/nvim-web-devicons' }
+
+        -- Dashboard
+        use { 'mhinz/vim-startify'}
+
+        -- Tab switching
+        use { 'akinsho/nvim-bufferline.lua' }
+
+        -- Git
+        use { 'lewis6991/gitsigns.nvim' }
+
+        -- Oil 
+        use { 'stevearc/oil.nvim' }
 
     use {
       "antosha417/nvim-lsp-file-operations",

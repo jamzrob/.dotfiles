@@ -7,14 +7,17 @@ windows:
   - vim:
     - ssh dev
     - source ~/.bashrc
+    - zsh
     - ew
     - vim .
   - git:
     - ssh dev
     - source ~/.bashrc
+    - zsh
     - ew
     - git status
   - run:
     - ssh dev
     - source ~/.bashrc
+    - zsh
     - ew

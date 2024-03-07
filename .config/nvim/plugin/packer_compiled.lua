@@ -86,7 +86,7 @@ _G.packer_plugins = {
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/jraubenheimer/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
@@ -118,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jraubenheimer/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["goyo.vim"] = {
     loaded = true,
@@ -156,6 +161,9 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/jraubenheimer/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
     url = "https://github.com/nvimdev/lspsaga.nvim"
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine-lsp-progress"] = {
     loaded = true,
@@ -181,6 +189,15 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jraubenheimer/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nerdicons.nvim"] = {
+    commands = { "NerdIcons" },
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nerdicons\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/opt/nerdicons.nvim",
+    url = "https://github.com/glepnir/nerdicons.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -334,6 +351,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-togglelist",
     url = "https://github.com/milkypostman/vim-togglelist"
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-vinegar"] = {
     loaded = true,
@@ -376,10 +397,17 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-lspconfig ]]
 vim.cmd [[ packadd lspsaga.nvim ]]
 
--- Config for: lspsaga.nvim
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'NerdIcons', function(cmdargs)
+          require('packer.load')({'nerdicons.nvim'}, { cmd = 'NerdIcons', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nerdicons.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('NerdIcons ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
 
-time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -65,6 +65,10 @@ function OpenFileInVerticalSplit(path)
 end
 
 
+-- etsy tests
+vim.api.nvim_set_keymap('n', '<leader>T', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rt', [[:!run_test %<CR>]], { noremap = true, silent = true })
+
 
 -- wrap wonder under cursor in console.log
 function _G.log_word()
@@ -74,6 +78,12 @@ function _G.log_word()
         vim.cmd('normal! viw"1P')
     end
 end
+
+function _G.packer_sync()
+    vim.cmd('normal! :PackerSync<CR>')
+end
+
+vim.api.nvim_command([[command! -nargs=? PS lua packer_sync()]])
 
 vim.api.nvim_command([[command! -nargs=? LogWord lua log_word(<f-args>)]])
 vim.api.nvim_set_keymap('n', '<leader>cl', ":LogWord<CR>", { noremap = true, silent = true })
