@@ -6,7 +6,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state" 
 export XDG_RUNTIME_DIR="/run/user/$UID" 
 export SHELL="/bin/zsh"
-alias test="test"
 
 
 ## OH MY ZSH
