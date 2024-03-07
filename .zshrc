@@ -57,7 +57,7 @@ alias ls='ls --color=auto -a'
 alias nvim_config="vim ~/.config/nvim/init.lua"
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
-alias rskhd="skhd --restart-service"
+alias dd='cd ~/.dotfiles'
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
