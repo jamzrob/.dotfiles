@@ -60,8 +60,8 @@ alias nvim_config="vim ~/.config/nvim/init.lua"
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
 alias dd='cd ~/.dotfiles'
-alias vd='cd ~/development/Etsyweb/phplib/EtsyConfig/development.php'
-alias vp='cd ~/development/Etsyweb/phplib/EtsyConfig/production.php'
+alias vid='vi ~/development/Etsyweb/phplib/EtsyConfig/development.php'
+alias vip='vi ~/development/Etsyweb/phplib/EtsyConfig/production.php'
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
