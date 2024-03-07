@@ -6,17 +6,11 @@ root: ~/
 windows:
   - vim:
     - ssh dev
-    - source ~/.bashrc
-    - source ~/.zshrc
     - ew
     - vim
   - git:
     - ssh dev
-    - source ~/.bashrc
-    - source ~/.zshrc
-    - ew
     - git status
   - run:
     - ssh dev
-    - source ~/.zshrc
     - ew
