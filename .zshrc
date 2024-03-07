@@ -26,7 +26,7 @@ plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
-plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 plugins+=(zsh-nvm-lazy-load)
 
 autoload -U compinit && compinit
@@ -119,3 +119,4 @@ export PATH=${HOME}/google-cloud-sdk/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
