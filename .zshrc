@@ -26,8 +26,10 @@ plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
 plugins+=(web-search) # google
 plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
-plugins+=(zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(zsh-nvm-lazy-load)
+
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,6 +60,8 @@ alias nvim_config="vim ~/.config/nvim/init.lua"
 alias rtmux="tmux source-file ~/.tmux.conf"
 alias gith="git config -l | grep alias | sed 's/^alias\.//g'"
 alias dd='cd ~/.dotfiles'
+alias vd='cd ~/development/Etsyweb/phplib/EtsyConfig/development.php'
+alias vp='cd ~/development/Etsyweb/phplib/EtsyConfig/production.php'
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
