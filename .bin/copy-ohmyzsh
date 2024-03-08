@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-rm ~/.zshrc
-cp ~/.dotfiles/.ohmyzsh ~/.zshrc
