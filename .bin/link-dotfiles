@@ -11,5 +11,19 @@ DOTFILES=(
 )
 
 for dotfile in "${DOTFILES[@]}";do
-        ln -sfn "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+        echo "Removing old ${dotfile}"
+
+        if [[-L "${HOME}/${dotfile}"]]; then
+            echo "Is a symlink"
+        else
+            echo "Not a symlink"
+        fi
+
+        # Remove if not symlink
+        # Comment out next lines
+        #
+        # [ -L "${HOME}/${dotfile}" ] && rm -f "${HOME}/${dotfile}"
+
+        # echo "Creating symlink for ${dotfile}"
+        # ln -sfn "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
