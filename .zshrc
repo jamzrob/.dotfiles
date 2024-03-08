@@ -124,4 +124,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# only if init if rbenv is installed
+
+if command -v rbenv > /dev/null; then eval "$(rbenv init -)"; fi
