@@ -5,13 +5,11 @@ DIR=$HOME/.dotfiles
 DOTFILES=(
     ".zshrc"
     ".tmux.conf"
+    ".ssh/config"
     ".config/nvim"
     ".config/tmuxinator"
-    ".config/skhd"
-    ".ssh/config"
-    ".config/yabai/.yabairc"
 )
 
 for dotfile in "${DOTFILES[@]}";do
-	ln -sfn "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+        ln -sfn "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
