@@ -13,7 +13,7 @@ DOTFILES=(
 for dotfile in "${DOTFILES[@]}";do
         echo "Removing old ${dotfile}"
 
-        if [[-L "${HOME}/${dotfile}"]]; then
+        if [-L "${HOME}/${dotfile}"]; then
             echo "Is a symlink"
         else
             echo "Not a symlink"
