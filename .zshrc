@@ -66,7 +66,7 @@ alias vid='vi ~/development/Etsyweb/phplib/EtsyConfig/development.php'
 alias vip='vi ~/development/Etsyweb/phplib/EtsyConfig/production.php'
 
 
-export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
+export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
 
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
 export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
