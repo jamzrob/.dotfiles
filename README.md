@@ -14,8 +14,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 4. Remove old files and link files
 See `./bin/link-dotfiles`
 
-5. [Install neovim](Ihttps://github.com/neovim/neovim/blob/master/INSTALL.md) 
-[Linux install](https://docs.rockylinux.org/books/nvchad/install_nvim/#neovim-installation)
+5. Use [bob](https://github.com/MordechaiHadad/bob) to install neovim
 
 6. [Install homebrew](https://docs.brew.sh/)
  
