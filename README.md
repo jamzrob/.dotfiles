@@ -15,6 +15,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 See `./bin/link-dotfiles`
 
 5. [Install neovim](Ihttps://github.com/neovim/neovim/blob/master/INSTALL.md) 
+[Linux install](https://docs.rockylinux.org/books/nvchad/install_nvim/#neovim-installation)
 
 6. [Install homebrew](https://docs.brew.sh/)
  
