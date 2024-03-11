@@ -32,6 +32,14 @@ Use install-curl-for-centos script to install curl first
 ```
 - Install linux brew using script
 
+### Apps to install
+
+1Password
+1Password Safar Extension
+Magnet
+Todoist
+Docker
+
 
 
 
