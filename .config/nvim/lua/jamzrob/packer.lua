@@ -176,14 +176,7 @@ require("packer").startup(function(use)
     -- Quickfix list toggle
     use {"milkypostman/vim-togglelist"}
 
-    -- Lsp loading status
-    use 'arkav/lualine-lsp-progress'
 
-    -- Tmux 
-    use({
-        "aserowy/tmux.nvim",
-        config = function() return require("tmux").setup() end
-    })
     -- the first run will install packer and our plugins
     if packer_bootstrap then
         require("packer").sync()
