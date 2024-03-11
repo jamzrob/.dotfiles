@@ -9,18 +9,6 @@ local ensure_packer = function() local fn = vim.fn
 end
 local packer_bootstrap = ensure_packer()
 
--- Autocommand that syncs packer when this file is changed
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
-  augroup end
-  augroup lua_source_config
-    autocmd!
-    autocmd BufWritePost *.lua source <afile>
-  augroup end
-]]
-
 require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
@@ -184,9 +172,6 @@ require("packer").startup(function(use)
     -- CLosing tags and brackets
     use { 'windwp/nvim-ts-autotag' }
     use { 'windwp/nvim-autopairs' }
-
-    -- Git 
-    use { 'dinhhuy258/git.nvim' }
 
     -- Quickfix list toggle
     use {"milkypostman/vim-togglelist"}

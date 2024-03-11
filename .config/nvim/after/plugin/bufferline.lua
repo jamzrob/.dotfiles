@@ -32,6 +32,6 @@ bufferline.setup({
   },
 })
 
-vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
+--vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 vim.keymap.set('n', 'gT', '<Cmd>BufferLineCyclePrev<CR>', {})
 vim.keymap.set('n', 'gt', '<Cmd>BufferLineCycleNext<CR>', {})

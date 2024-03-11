@@ -5,8 +5,7 @@ require('telescope').setup{
          'rg',
          '--color=never',
          '--no-heading',
-         '--with-filename',
-         '--line-number',
+         '--with-filename', '--line-number',
          '--column',
          '--smart-case'
      },

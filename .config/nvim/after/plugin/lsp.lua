@@ -20,6 +20,7 @@ local preset = {
 local lsp = require('lsp-zero').preset(preset)
 
 lsp.ensure_installed({
+    'tsserver',
     'vtsls',
     'eslint',
     'lua_ls',
