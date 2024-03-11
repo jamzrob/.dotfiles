@@ -12,7 +12,6 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-$HOST"
-
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
 
@@ -107,6 +106,10 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
+createrepo() {
+    gh repo create "$1" --private --source=. --remote=upstream
 }
 
 

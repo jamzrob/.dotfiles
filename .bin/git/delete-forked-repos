@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+gh repo list --fork \
+  | cut -f1 \
+  | while read name; do
+  gh repo delete --yes "$name"
+done
+

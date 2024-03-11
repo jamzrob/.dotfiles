@@ -9,6 +9,18 @@ local ensure_packer = function() local fn = vim.fn
 end
 local packer_bootstrap = ensure_packer()
 
+-- Autocommand that syncs packer when this file is changed
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
+  augroup end
+  augroup lua_source_config
+    autocmd!
+    autocmd BufWritePost *.lua source <afile>
+  augroup end
+]]
+
 require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
@@ -149,9 +161,6 @@ require("packer").startup(function(use)
         -- Git
         use { 'lewis6991/gitsigns.nvim' }
 
-        -- Oil 
-        use { 'stevearc/oil.nvim' }
-
     use {
       "antosha417/nvim-lsp-file-operations",
       requires = {
@@ -182,23 +191,14 @@ require("packer").startup(function(use)
     -- Quickfix list toggle
     use {"milkypostman/vim-togglelist"}
 
-    -- Github PRs
-    use {
-      'pwntester/octo.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope.nvim',
-        -- OR 'ibhagwan/fzf-lua',
-        'nvim-tree/nvim-web-devicons',
-      },
-      config = function ()
-        require"octo".setup()
-      end
-    }
-
     -- Lsp loading status
     use 'arkav/lualine-lsp-progress'
 
+    -- Tmux 
+    use({
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    })
     -- the first run will install packer and our plugins
     if packer_bootstrap then
         require("packer").sync()
