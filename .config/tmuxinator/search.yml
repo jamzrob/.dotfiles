@@ -1,17 +1,18 @@
 # /Users/jraubenheimer/.config/tmuxinator/etsy.yml
 
-name: etsy
+name: search
 root: ~/
 
 windows:
   - vim:
-    - ssh dev
+    - ssh search
     - ew
     - vim .
   - git:
-    - ssh dev
+    - ssh search
     - ew
     - git status
   - run:
-    - ssh dev
+    - ssh search
     - ew
+
