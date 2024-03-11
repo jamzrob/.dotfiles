@@ -89,12 +89,17 @@ require("packer").startup(function(use)
     -- Zen mode
             use{ 'folke/zen-mode.nvim' }
 
-    -- which key 
         use {
           "folke/which-key.nvim",
           config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
+            require("which-key").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              triggers = {"<leader>"}
+              -- refer to the configuration section below
+            }
           end
         }
 

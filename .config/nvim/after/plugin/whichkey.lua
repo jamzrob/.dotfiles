@@ -1,3 +1,5 @@
+
+
 local wk = require("which-key")
 -- As an example, we will create the following mappings:
 --  * <leader>ff find files
@@ -43,7 +45,7 @@ wk.register({
         L = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Find Workspace Symbols" },
         o = { "<cmd>lua require('telescope.builtin').lsp_document_diagnostics()<CR>", "Find Document Diagnostics" },
         O = { "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<CR>", "Find Workspace Diagnostics" },
-        p = {  "Search file path" },
+        f = {  "Search file path" },
         ["?"] = { "<cmd>lua require('telescope.builtin').builtin()<CR>", "Find Telescope Help" },
     },
 }, { prefix = "<leader>" })
