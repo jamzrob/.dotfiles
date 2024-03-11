@@ -29,6 +29,3 @@
 [push]
         autoSetupRemote = true
         default = current
-[user]
-	email = jraubenheimer@etsy.com
-	name = James Raubenheimer
