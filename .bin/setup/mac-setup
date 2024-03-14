@@ -5,7 +5,7 @@ git clone --recurse-submodules git@github.com:jamzrob/.dotfiles.git
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-./bin/link-dotfiles
+./bin/setup/link-dotfiles
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -17,3 +17,5 @@ cargo install --git https://github.com/MordechaiHadad/bob.git
 
 bob install stable
 
+./bin/pyenv-setup
+./bin/nvm-setup

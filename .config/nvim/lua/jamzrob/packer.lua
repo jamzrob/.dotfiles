@@ -181,6 +181,15 @@ require("packer").startup(function(use)
     -- Quickfix list toggle
     use {"milkypostman/vim-togglelist"}
 
+    -- Tmux pane switching 
+    use { "christoomey/vim-tmux-navigator" }
+
+    -- Run commands in tmux window
+    use {'preservim/vimux'}
+    use { 'tyewang/vimux-jest-test' }
+
+
+
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

@@ -1,3 +1,0 @@
-#!/bin/zsh
-npm install -g npx
-npm install -g yarn

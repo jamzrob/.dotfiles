@@ -3,15 +3,13 @@ export POWERLEVEL9K_MODE='nerdfont-complete'
 # EXPORT
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
-export CLOUDSDK_CONFIG="$XDG_CONFIG_HOME/google-cloud-sdk"
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/.docker"
-export PYENV_VERSION="3.8.16"
-export PYENV_ROOT="$XDG_CONFIG_HOME/.pyenv"
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
-export GEM_HOME="$XDG_DATA_HOME/.gem"
-export GNUPGHOME="$XDG_DATA_HOME/.gnupg"
-export RBENV_ROOT="$XDG_DATA_HOME/.rbenv"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export NPM_CONFIG_USERCONFIG="$HOME/npm/conf"
+export CLOUDSDK_CONFIG="$HOME/google-cloud-sdk"
+export DOCKER_CONFIG="$HOME/.docker"
+export GNUPGHOME="$HOME/.gnupg"
+export RBENV_ROOT="$HOME/.rbenv"
 
 export XDG_STATE_HOME="$HOME/.local/state" 
 
@@ -31,14 +29,17 @@ export ZSH_PYENV_LAZY_VIRTUALENV=true
 zstyle ':omz:plugins:nvm' lazy yes # lazy load nvim
 plugins+=(tmux) # tksv kill serve 
 plugins+=(sudo) # hit escape twice
-plugins+=(copyfile) 
+plugins+=(copyfile) # copyfile to clipboard
 plugins+=(fzf) #auto completions
 plugins+=(1password) # opswd copy password to clip board
-plugins+=(vi-mode) 
+# plugins+=(zsh-vi-mode) # cool
 plugins+=(web-search) # google
 plugins+=(gh git-auto-fetch) # gh completions
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
+## lazy loaders
 plugins+=(nvm)
+plugins+=(pyenv-lazy)
+
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 

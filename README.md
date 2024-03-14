@@ -1,5 +1,9 @@
 # README
 
+```bash
+./bin/setup/mac-setup
+
+```
 ## Setup git
 
 ## Clone this repo
@@ -46,6 +50,7 @@ brew-install-all
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+
 ## Use [bob](https://github.com/MordechaiHadad/bob) to install neovim
 ```bash
 cargo install --git https://github.com/MordechaiHadad/bob.git
@@ -53,7 +58,17 @@ bob install stable
 bob use stable
 ```
 
+## Setup nvm & pyenv
+```bash
+./bin/setup/nvm-setup
+./bin/setup/pyenv-setup
+```
+
 ### Apps to install
+```bash
+brew-install-apps
+
+```
 
 iTerm2
 1Password

@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+curl https://pyenv.run | zsh
+git clone https://github.com/pyenv/pyenv-virtualenv.git "$(pyenv root)/plugins/pyenv-virtualenv"
+git clone https://github.com/momo-lab/pyenv-install-latest.git "$(pyenv root)"/plugins/pyenv-install-latest
+pyenv install-latest

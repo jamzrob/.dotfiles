@@ -9,6 +9,7 @@
         br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
         br = branch
         ci = "!f() { git add . && git commit -m \"$@\"; }; f"
+        wip = "!f() { git add . && git commit -m "WIP"; }; f"
         st = status
         sh = stash -u
         rs = reset HEAD~

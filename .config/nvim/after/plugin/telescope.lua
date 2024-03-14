@@ -1,9 +1,7 @@
 local keyset = vim.keymap.set
 require('telescope').setup{
   defaults = {
-     vimgrep_arguments = {
-         'rg',
-         '--color=never',
+     vimgrep_arguments = { 'rg', '--color=never',
          '--no-heading',
          '--with-filename', '--line-number',
          '--column',
@@ -125,4 +123,4 @@ end
 
 vim.api.nvim_command([[command! -nargs=? SearchFilePath lua searchFilePath(<f-args>)]])
 -- Create a key mapping for this function
-vim.api.nvim_set_keymap('n', '<Leader>pf', ":SearchFilePath<CR>", { noremap = true, silent = true })
+keyset('n', '<leader>fp', ":SearchFilePath<CR>", { noremap = true, silent = true })

@@ -22,7 +22,6 @@ vim.o.undofile = true
 -- searching
 vim.o.hlsearch = true
 vim.o.incsearch = true
-vim.o.rtp:append('/usr/local/opt/fzf')
 
 -- colors
 vim.o.termguicolors = true
@@ -31,7 +30,7 @@ vim.o.colorcolumn = ""
 -- scrolling
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
-vim.o.isfname:append("@-@")
+vim.opt.isfname:append("@-@")
 
 -- fast update time
 vim.o.updatetime = 50
@@ -57,5 +56,9 @@ vim.o.compatible = false
 
 
 -- autowrap and make comments
-vim.o.formatoions.append('c')
-vim.o.formatoions.append('o')
+vim.opt.formatoptions:append('c')
+vim.opt.formatoptions:append('o')
+
+-- fzf
+vim.opt.rtp:append("/usr/local/opt/fzf")
+
