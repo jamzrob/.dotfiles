@@ -1,3 +1,17 @@
 #!/bin/zsh
 
-xargs brew install < "$HOME/.dotfiles/.data/brews"
+## Languages
+brew install nvm rbenv lua python
+
+## Parsing
+brew install jq readline
+
+## Searching
+brew install fzf ripgrep fd
+
+## Tmux 
+brew install tmux tmuxinator
+
+## Libraries 
+brew install gh
+

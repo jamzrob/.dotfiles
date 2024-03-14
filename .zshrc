@@ -3,6 +3,16 @@ export POWERLEVEL9K_MODE='nerdfont-complete'
 # EXPORT
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
+export CLOUDSDK_CONFIG="$XDG_CONFIG_HOME/google-cloud-sdk"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/.docker"
+export PYENV_VERSION="3.8.16"
+export PYENV_ROOT="$XDG_CONFIG_HOME/.pyenv"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
+export GEM_HOME="$XDG_DATA_HOME/.gem"
+export GNUPGHOME="$XDG_DATA_HOME/.gnupg"
+export RBENV_ROOT="$XDG_DATA_HOME/.rbenv"
+
 export XDG_STATE_HOME="$HOME/.local/state" 
 
 ## OH MY ZSH
@@ -17,13 +27,18 @@ export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
 
 export NVM_LAZY_LOAD=true
 export ZSH_PYENV_LAZY_VIRTUALENV=true
+
+zstyle ':omz:plugins:nvm' lazy yes # lazy load nvim
 plugins+=(tmux) # tksv kill serve 
 plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) 
+plugins+=(fzf) #auto completions
+plugins+=(1password) # opswd copy password to clip board
+plugins+=(vi-mode) 
 plugins+=(web-search) # google
-plugins+=(git github git-auto-fetch) #empty_gh, new_gh, exist_gh
+plugins+=(gh git-auto-fetch) # gh completions
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
-plugins+=(zsh-nvm-lazy-load)
+plugins+=(nvm)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 
@@ -68,17 +83,6 @@ alias gitnewrepo="gh repo create my-project --private --source=. --remote=upstre
 
 export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
 
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/conf"
-export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
-export CLOUDSDK_CONFIG="$XDG_CONFIG_HOME/google-cloud-sdk"
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/.docker"
-export PYENV_VERSION="3.8.16"
-export PYENV_ROOT="$XDG_CONFIG_HOME/.pyenv"
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/.gem"
-export GEM_HOME="$XDG_DATA_HOME/.gem"
-export GNUPGHOME="$XDG_DATA_HOME/.gnupg"
-export RBENV_ROOT="$XDG_DATA_HOME/.rbenv"
-
 
 
 
@@ -100,10 +104,6 @@ export PATH="$HOME/.dotfiles/.bin/setup:$PATH"
 export PATH="$HOME/.dotfiles/.bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
-#export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
-#export PATH="/opt/homebrew/opt/bin:$PATH"
-#export PATH="/usr/local/opt/openssl/bin:$PATH"
-
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
@@ -112,6 +112,10 @@ timezsh() {
 createrepo() {
     gh repo create "$1" --private --source=. --remote=upstream
 }
+
+
+# create gitignores
+function gi() { curl -sLw \"\\\n\" https://www.toptal.com/developers/gitignore/api/\$@ ;}
 
 
 ## ETSY
@@ -131,8 +135,10 @@ alias etsypass="op read op://Private/etsycorp.com/password"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Go in .zprofile
+
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # only if init if rbenv is installed
 
-if command -v rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+

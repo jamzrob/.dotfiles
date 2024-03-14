@@ -15,7 +15,6 @@ capstone
 chruby
 cmake
 coreutils
-curl
 deno
 double-conversion
 dtc
@@ -53,7 +52,6 @@ hub
 icu4c
 isl
 jemalloc
-jenv
 jpeg
 jpeg-turbo
 jq
@@ -98,12 +96,7 @@ lz4
 lzlib
 lzo
 m4
-macos-term-size
-mongocli
-mongodb-atlas-cli
-mongodb-community
-mongodb-database-tools
-mongosh
+macos-te-size
 mpdecimal
 mpfr
 msgpack
@@ -176,4 +169,3 @@ zstd
 adoptopenjdk16
 amethyst
 ngrok
-react-native-debugger

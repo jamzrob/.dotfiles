@@ -1,59 +1,61 @@
 -- line numbers
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.o.nu = true
+vim.o.relativenumber = true
 
 -- tabs
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
 -- indents
-vim.opt.smartindent = true
+vim.o.smartindent = true
 
-vim.opt.wrap = true
+vim.o.wrap = true
 
--- No swaps long running todos
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("XDG_CONFIG_HOME") .. "/undo"
-vim.opt.undofile = true
+-- no swaps
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("XDG_CONFIG_HOME") .. "/undo"
+vim.o.undofile = true
 
--- search highlights
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+-- searching
+vim.o.hlsearch = true
+vim.o.incsearch = true
+vim.o.rtp:append('/usr/local/opt/fzf')
 
 -- colors
-vim.opt.termguicolors = true
-vim.opt.colorcolumn = ""
+vim.o.termguicolors = true
+vim.o.colorcolumn = ""
 
 -- scrolling
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.o.scrolloff = 8
+vim.o.signcolumn = "yes"
+vim.o.isfname:append("@-@")
 
 -- fast update time
-vim.opt.updatetime = 50
+vim.o.updatetime = 50
 
 -- text width
-vim.opt.textwidth = 80
-vim.opt.wrap = true
-vim.opt.linebreak = true
+vim.o.textwidth = 80
+vim.o.wrap = true
+vim.o.linebreak = true
 
 -- auto writing
-vim.opt.autowrite = true
+vim.o.autowrite = true
 
 -- move jarring splits outta here
-vim.opt.spr = true
+vim.o.spr = true
+vim.o.splitright = true
 
-vim.opt.clipboard="unnamedplus"
+
+-- clipboard
+vim.o.clipboard="unnamedplus"
+
+-- no vi compatbile
+vim.o.compatible = false
 
 
-vim.cmd([[
-set nocompatible
-filetype plugin on
-syntax on
-set splitright 
-set formatoptions+=r
-]])
-
+-- autowrap and make comments
+vim.o.formatoions.append('c')
+vim.o.formatoions.append('o')

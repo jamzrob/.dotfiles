@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+
+git clone --recurse-submodules git@github.com:jamzrob/.dotfiles.git
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+./bin/link-dotfiles
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+./bin/brew-install-all
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install --git https://github.com/MordechaiHadad/bob.git
+
+bob install stable
+
