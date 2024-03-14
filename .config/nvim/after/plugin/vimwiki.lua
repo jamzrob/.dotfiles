@@ -1,7 +1,9 @@
+
+
 -- vim.keymap.set("n", "<Leader>vs", ":VimwikiVSplitLink<CR>")
 --vim.keymap.set("n", "<Leader>vi", ":vs \\| :VimwikiIndex<CR>")
 vim.keymap.set("n", "<Leader>wa", ":call VimwikiFindAllTasks()<CR>")
-vim.keymap.set("x", "_", "+f(<leader>pldt)<C-c>", { remap = true})
+vim.keymap.set("x", "_", "+f(<leader>pldt)<C-c>", { remap = true })
 vim.keymap.set("n", "<leader>wx", ":call VimwikiFindIncompleteTasks()<CR>")
 vim.keymap.set("x", "<leader>-", ":VimwikiChangeSymbolTo -<CR>")
 vim.keymap.set("x", "<leader>gl", ":VimwikiChangeSymbolTo -<CR>:VimwikiToggleListItem <CR>")
@@ -19,28 +21,28 @@ local config = {
     maxDepth = 3,
     ignoreFolders = { 'node_modules', '.git' },
     rootWikiFolder = 'wiki',
-    wikiConfig = { syntax='markdown', ext='md' }
+    wikiConfig = { syntax = 'markdown', ext = 'md' }
 }
 
 -- function to search project folders for root wiki folders (returns system list)
 local function getNonProjectWikis()
     local command = 'ls -d ' .. config.vimwikiRoot ..
         '/*/'
-    local list = vim.api.nvim_call_function('systemlist', {command})
+    local list = vim.api.nvim_call_function('systemlist', { command })
     return list
 end
 
 function GetFileName(url)
-  local name =  url:match("^.+/(.+)$")
-  name = name:sub(1, -2)
-  return name
+    local name = url:match("^.+/(.+)$")
+    name = name:sub(1, -2)
+    return name
 end
 
 local function tableConcat(t1, t2)
-   for i=1,#t2 do
-      t1[#t1+1] = t2[i]:sub(1, -2)
-   end
-   return t1
+    for i = 1, #t2 do
+        t1[#t1 + 1] = t2[i]:sub(1, -2)
+    end
+    return t1
 end
 
 
@@ -68,18 +70,18 @@ local function updateVimwikiList(folders)
             path = path,
             syntax = config.wikiConfig.syntax,
             ext = config.wikiConfig.ext,
-            auto_tags =1,
-            path_html = '~/vimwiki_html/'..filename,
+            auto_tags = 1,
+            path_html = '~/vimwiki_html/' .. filename,
             custom_wiki2html = '~/wiki/wiki2html.sh',
-            generated_links_caption= 1,
-            links_space_char='_',
-            diary_rel_path="../daily/"
+            generated_links_caption = 1,
+            links_space_char = '_',
+            diary_rel_path = "../daily/"
 
         }
         table.insert(new_list, item)
     end
     vim.g.vimwiki_list = new_list
-    vim.api.nvim_call_function('vimwiki#vars#init',{})
+    vim.api.nvim_call_function('vimwiki#vars#init', {})
 end
 
 
@@ -89,8 +91,8 @@ local function searchForWikis()
         ' -maxdepth ' .. config.maxDepth
     if #config.ignoreFolders > 0 then command = command .. " \\(" end
     for _, f in ipairs(config.ignoreFolders) do
-        command = command .. " -path '*/"..f.."/*' -prune"
-        if next(config.ignoreFolders,_) == nil then
+        command = command .. " -path '*/" .. f .. "/*' -prune"
+        if next(config.ignoreFolders, _) == nil then
             command = command .. " \\) -o"
         else
             command = command .. " -o"
@@ -99,7 +101,7 @@ local function searchForWikis()
     command = command .. ' -type d -name ' .. config.rootWikiFolder
     command = command .. ' -print | '
     command = command .. ' sed s#' .. config.projectsFolder .. '##'
-    local list = vim.api.nvim_call_function('systemlist', {command})
+    local list = vim.api.nvim_call_function('systemlist', { command })
     return list
 end
 
@@ -109,7 +111,7 @@ function _G.ProjectWikiOpen(name)
     -- show fzf wiki search if no wiki passed
     if not name then
         local wikis = searchForWikis()
-;
+        ;
         local options = {
             sink = function(selected) ProjectWikiOpen(selected) end,
             source = wikis,
@@ -120,11 +122,11 @@ function _G.ProjectWikiOpen(name)
                 border = 'sharp'
             }
         }
-        vim.fn.call('fzf#run', {options})
+        vim.fn.call('fzf#run', { options })
     else
         for i, v in ipairs(vim.g.vimwiki_list) do
-            if v.path == name or v.path == config.projectsFolder..name then
-                vim.fn.call('vimwiki#base#goto_index',{i})
+            if v.path == name or v.path == config.projectsFolder .. name then
+                vim.fn.call('vimwiki#base#goto_index', { i })
                 return
             end
         end
@@ -137,7 +139,7 @@ function _G.MyWikiOpen(name)
     if not name then
         local non = getNonProjectWikis()
         updateVimwikiList(non)
-;
+        ;
         local options = {
             sink = function(selected) MyWikiOpen(selected) end,
             source = non,
@@ -148,11 +150,11 @@ function _G.MyWikiOpen(name)
                 border = 'sharp'
             }
         }
-        vim.fn.call('fzf#run', {options})
+        vim.fn.call('fzf#run', { options })
     else
         for i, v in ipairs(vim.g.vimwiki_list) do
-            if v.path == name or v.path == config.projectsFolder..name then
-                vim.fn.call('vimwiki#base#goto_index',{i})
+            if v.path == name or v.path == config.projectsFolder .. name then
+                vim.fn.call('vimwiki#base#goto_index', { i })
                 return;
             end
         end
@@ -165,6 +167,6 @@ vim.api.nvim_command([[command! -nargs=? ProjectWikiOpen lua ProjectWikiOpen(<f-
 vim.api.nvim_command([[command! -nargs=? MyWikiOpen lua MyWikiOpen(<f-args>)]])
 
 -- add keybindings
-vim.api.nvim_set_keymap("n", "<Leader>ww", ":VimwikiIndex 1<CR>", { noremap=true })
-vim.api.nvim_set_keymap("n", "<Leader>wt", ":ProjectWikiOpen<CR>", { noremap=true })
-vim.api.nvim_set_keymap("n", "<Leader>wp", ":MyWikiOpen<CR>", { noremap=true })
+vim.api.nvim_set_keymap("n", "<Leader>ww", ":VimwikiIndex 1<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>wt", ":ProjectWikiOpen<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>wp", ":MyWikiOpen<CR>", { noremap = true })

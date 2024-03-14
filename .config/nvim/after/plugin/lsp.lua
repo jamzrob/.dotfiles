@@ -1,20 +1,20 @@
 local preset = {
-  float_border = 'rounded',
-  call_servers = 'local',
-  configure_diagnostics = true,
-  setup_servers_on_start = true,
-  set_lsp_keymaps = {
-    preserve_mappings = false,
-    omit = {},
-  },
-  manage_nvim_cmp = {
-    set_sources = 'recommended',
-    set_basic_mappings = true,
-    set_extra_mappings = false,
-    use_luasnip = true,
-    set_format = true,
-    documentation_window = true,
-  },
+    float_border = 'rounded',
+    call_servers = 'local',
+    configure_diagnostics = true,
+    setup_servers_on_start = true,
+    set_lsp_keymaps = {
+        preserve_mappings = false,
+        omit = {},
+    },
+    manage_nvim_cmp = {
+        set_sources = 'recommended',
+        set_basic_mappings = true,
+        set_extra_mappings = false,
+        use_luasnip = true,
+        set_format = true,
+        documentation_window = true,
+    },
 }
 
 local lsp = require('lsp-zero').preset(preset)
@@ -40,12 +40,12 @@ lsp.configure('lua_ls', {
 })
 
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
 })
 cmp_mappings['<S-Tab>'] = nil
 
@@ -66,39 +66,40 @@ lsp.set_preferences({
 
 
 lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
---  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+    local opts = { buffer = bufnr, remap = false }
+    vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    --  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 vim.cmd([[
 vnoremap / "zy/<C-r>z<CR>
 ]])
 lsp.format_on_save({
-  format_opts = {
-    async = false,
-    timeout_ms = 10000, },
-  servers = {
-    ['rust_analyzer'] = {'rust'},
-    ['ruby'] = {'solargraph'}
-  }
+    format_opts = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['rust_analyzer'] = { 'rust' },
+        ['ruby'] = { 'solargraph' }
+    }
 })
 
 
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = { "*.rb" },
-    desc = "Auto-format Python files after saving",
+    pattern = { "*.rb", "*.lua" },
+    desc = "Auto-format files after saving",
     callback = function()
-        vim.lsp.buf.format({async = false, timeout_ms = 10000})
+        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end,
 })
 

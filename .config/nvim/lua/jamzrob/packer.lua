@@ -1,6 +1,8 @@
 -- ensure the packer plugin manager is installed
-local ensure_packer = function() local fn = vim.fn
-    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim' if fn.empty(fn.glob(install_path)) > 0 then
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
         fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
         vim.cmd [[packadd packer.nvim]]
         return true
@@ -12,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
---- VimWiki
+    --- VimWiki
     use { 'vimwiki/vimwiki' }
 
     -- Treesitter
@@ -30,13 +32,13 @@ require("packer").startup(function(use)
     use {
         'junegunn/fzf.vim',
         requires = { 'junegunn/fzf', run = ':call fzf#install()' }
-     }
+    }
 
-     -- Harpoon
-     use {
+    -- Harpoon
+    use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        requires = { {"nvim-lua/plenary.nvim"} }
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
 
     -- Colors
@@ -73,7 +75,7 @@ require("packer").startup(function(use)
         }
     }
     use { 'neovim/nvim-lspconfig' }
-        use ({
+    use({
         'nvimdev/lspsaga.nvim',
         after = 'nvim-lspconfig',
         config = function()
@@ -84,109 +86,100 @@ require("packer").startup(function(use)
     use { 'mfussenegger/nvim-lint' }
 
     -- CoPilot
-    use  { 'github/copilot.vim' }
+    use { 'github/copilot.vim' }
 
     -- Zen mode
-            use{ 'folke/zen-mode.nvim' }
+    use { 'folke/zen-mode.nvim' }
 
-        use {
-          "folke/which-key.nvim",
-          config = function()
+    use {
+        "folke/which-key.nvim",
+        config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
             require("which-key").setup {
-              -- your configuration comes here
-              -- or leave it empty to use the default settings
-              triggers = {"<leader>"}
-              -- refer to the configuration section below
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                triggers = { "<leader>" }
+                -- refer to the configuration section below
             }
-          end
-        }
+        end
+    }
 
-        use {
-          'nvim-lualine/lualine.nvim',
-          requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-         }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
-        -- calendar 
-        use {'itchyny/calendar.vim'}
-
-        --- writing
-        use {'preservim/vim-pencil'}
-        use { 'rhysd/vim-grammarous' }
-        use { 'junegunn/goyo.vim' }
-        use { 'kamykn/spelunker.vim' }
+    --- writing
+    use { 'preservim/vim-pencil' }
+    use { 'rhysd/vim-grammarous' }
+    use { 'junegunn/goyo.vim' }
+    use { 'kamykn/spelunker.vim' }
 
 
-        -- floating term
-        use {'voldikss/vim-floaterm'}
+    -- floating term
+    use { 'voldikss/vim-floaterm' }
 
-        -- File tree
-        -- - hop up a level, ~ go home
-        use {"tpope/vim-vinegar"}
-        use {
-          'nvim-tree/nvim-tree.lua',
-          requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-          },
-        }
-
-        use({'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end})
-        use {
-            "nvim-neo-tree/neo-tree.nvim",
-            branch = "v3.x",
-            requires = {
+    -- File tree
+    -- - hop up a level, ~ go home
+    use { "tpope/vim-vinegar" }
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-            }
         }
+    }
 
-        use { 'nvim-tree/nvim-web-devicons' }
 
-        -- Dashboard
-        use { 'mhinz/vim-startify'}
+    use({ 'glepnir/nerdicons.nvim', cmd = 'NerdIcons', config = function() require('nerdicons').setup({}) end })
+    use { 'nvim-tree/nvim-web-devicons' }
 
-        -- Tab switching
-        use { 'akinsho/nvim-bufferline.lua' }
+    -- Dashboard
+    use { 'mhinz/vim-startify' }
 
-        -- Git
-        use { 'lewis6991/gitsigns.nvim' }
+    -- Tab switching
+    use { 'akinsho/nvim-bufferline.lua' }
+
+    -- Git
+    use { 'lewis6991/gitsigns.nvim' }
 
     use {
-      "antosha417/nvim-lsp-file-operations",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-neo-tree/neo-tree.nvim",
-      },
-      config = function()
-        require("lsp-file-operations").setup()
-      end,
+        "antosha417/nvim-lsp-file-operations",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-neo-tree/neo-tree.nvim",
+        },
+        config = function()
+            require("lsp-file-operations").setup()
+        end,
     }
 
     -- case converter
     use { "tpope/vim-abolish" }
 
     -- clipboard
-    use { 'ojroques/vim-oscyank', branch = "main"}
-
-    -- Typescript
-    use { 'leafgarland/typescript-vim' }
+    use { 'ojroques/vim-oscyank', branch = "main" }
 
     -- CLosing tags and brackets
     use { 'windwp/nvim-ts-autotag' }
     use { 'windwp/nvim-autopairs' }
 
     -- Quickfix list toggle
-    use {"milkypostman/vim-togglelist"}
+    use { "milkypostman/vim-togglelist" }
 
-    -- Tmux pane switching 
+    -- Tmux pane switching
     use { "christoomey/vim-tmux-navigator" }
 
     -- Run commands in tmux window
-    use {'preservim/vimux'}
+    use { 'preservim/vimux' }
     use { 'tyewang/vimux-jest-test' }
+
+    -- worktrees
+    use { 'ThePrimeagen/git-worktree.nvim' }
 
 
 
@@ -209,7 +202,7 @@ vim.cmd([[
 	\ 'custom_wiki2html': 'vimwiki_markdown',
 	\ 'template_ext': '.html',
     \ 'auto_tags': 1,
-    \'links_space_char': '_' }, 
+    \'links_space_char': '_' },
     \{
 	\ 'path': '~/wiki/etsy',
 	\ 'template_path': '~/wiki/.templates/',
@@ -220,7 +213,7 @@ vim.cmd([[
 	\ 'custom_wiki2html': 'vimwiki_markdown',
 	\ 'template_ext': '.html',
     \ 'auto_tags': 1,
-    \'links_space_char': '_' }, 
+    \'links_space_char': '_' },
     \{
 	\ 'path': '~/wiki/personal',
 	\ 'template_path': '~/wiki/.templates/',
@@ -245,4 +238,3 @@ vim.cmd([[
     \'links_space_char': '_' }]
     let g:vimwiki_auto_header=1
 ]])
-
