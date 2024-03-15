@@ -41,4 +41,4 @@ function ColorMyPencils(color)
     vim.opt.signcolumn = "no"
 end
 
-ColorMyPencils("gruvbox")
+ColorMyPencils("rose-pine")
