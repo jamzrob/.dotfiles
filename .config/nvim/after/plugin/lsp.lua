@@ -20,6 +20,8 @@ local preset = {
 local lsp = require('lsp-zero').preset(preset)
 
 lsp.ensure_installed({
+    "pyright",
+    "gopls",
     'tsserver',
     'vtsls',
     'eslint',
@@ -96,19 +98,20 @@ lsp.format_on_save({
 
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = { "*.rb", "*.lua" },
+    pattern = { "*.rb", "*.lua", "*.go" },
     desc = "Auto-format files after saving",
     callback = function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end,
 })
 
-vim.cmd([[autocmd BufWritePost *.html.erb silent! !htmlbeautifier %]])
-vim.cmd([[autocmd BufWritePost *.html silent! !htmlbeautifier %]])
+vim.cmd([[autocmd BufWritePost *.html.erb silent! !prettier %]])
+vim.cmd([[autocmd BufWritePost *.html silent! !prettier %]])
 vim.cmd([[autocmd BufWritePost *.ts EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.tsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.jsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.js EslintFixAll]])
+vim.cmd([[autocmd BufWritePost *.py silent! !black %]])
 
 lsp.setup()
 
@@ -136,3 +139,6 @@ set path =
             \~/development/Etsyweb/htdocs_arizona/phplib
 set suffixesadd=.tpl,.php,.js,.scss,.ts
 ]])
+
+require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.htmx.setup {}

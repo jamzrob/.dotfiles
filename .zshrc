@@ -23,10 +23,10 @@ export ZSH_COMPDUMP="$XDG_CACHE_HOME/.zcompdump-$HOST"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh
 
-export NVM_LAZY_LOAD=true
+#export NVM_LAZY_LOAD=false
 export ZSH_PYENV_LAZY_VIRTUALENV=true
 
-zstyle ':omz:plugins:nvm' lazy yes # lazy load nvim
+#zstyle ':omz:plugins:nvm' lazy yes # lazy load nvim
 plugins+=(tmux) # tksv kill serve 
 plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) # copyfile to clipboard
@@ -37,7 +37,7 @@ plugins+=(web-search) # google
 plugins+=(gh git-auto-fetch) # gh completions
 plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 ## lazy loaders
-plugins+=(nvm)
+#plugins+=(nvm)
 plugins+=(pyenv-lazy)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -48,7 +48,6 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz compinit && compinit
 
 bindkey -s "^f" "tmux-sessionizer\n"
-bindkey -s "^h" "cheat\n"
 bindkey '^[[Z' autosuggest-accept  
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey '^ ' autosuggest-accept # ctrl + space
@@ -80,6 +79,7 @@ alias dd='cd ~/.dotfiles'
 alias vid='vi ~/development/Etsyweb/phplib/EtsyConfig/development.php'
 alias vip='vi ~/development/Etsyweb/phplib/EtsyConfig/production.php'
 alias gitnewrepo="gh repo create my-project --private --source=. --remote=upstream"
+alias autogpt="$HOME/.config/AutoGPT/autogpts/autogpt/autogpt.sh run"
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
@@ -105,6 +105,7 @@ export PATH="$HOME/.dotfiles/.bin/setup:$PATH"
 export PATH="$HOME/.dotfiles/.bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
@@ -141,5 +142,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 #eval "$(/opt/homebrew/bin/brew shellenv)"
 #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # only if init if rbenv is installed
-
-
+export NVM_DIR=~/.nvm
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+alias air='$(go env GOPATH)/bin/air'

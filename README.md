@@ -1,4 +1,4 @@
-# README
+c README
 
 ```bash
 ./bin/setup/mac-setup

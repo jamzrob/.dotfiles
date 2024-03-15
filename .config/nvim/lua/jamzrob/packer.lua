@@ -164,15 +164,8 @@ require("packer").startup(function(use)
     -- clipboard
     use { 'ojroques/vim-oscyank', branch = "main" }
 
-    -- CLosing tags and brackets
-    use { 'windwp/nvim-ts-autotag' }
-    use { 'windwp/nvim-autopairs' }
-
     -- Quickfix list toggle
     use { "milkypostman/vim-togglelist" }
-
-    -- Tmux pane switching
-    use { "christoomey/vim-tmux-navigator" }
 
     -- Run commands in tmux window
     use { 'preservim/vimux' }
@@ -181,7 +174,27 @@ require("packer").startup(function(use)
     -- worktrees
     use { 'ThePrimeagen/git-worktree.nvim' }
 
+    -- snippets
+    use { 'L3MON4D3/LuaSnip' }
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function()
+            require 'cmp'.setup {
+                snippet = {
+                    expand = function(args)
+                        require 'luasnip'.lsp_expand(args.body)
+                    end
+                },
 
+                sources = {
+                    { name = 'luasnip' },
+                    -- more sources
+                },
+            }
+        end
+    }
+    use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'rafamadriz/friendly-snippets' }
 
 
     -- the first run will install packer and our plugins
