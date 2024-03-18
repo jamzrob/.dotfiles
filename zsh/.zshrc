@@ -36,7 +36,6 @@ plugins+=(web-search) # google
 plugins+=(gh git-auto-fetch) # gh completions
 plugins+=(zsh-autosuggestions)
 ## lazy loaders
-plugins+=(pyenv-lazy)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
