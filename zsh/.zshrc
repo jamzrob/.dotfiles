@@ -32,12 +32,10 @@ plugins+=(sudo) # hit escape twice
 plugins+=(copyfile) # copyfile to clipboard
 plugins+=(fzf) #auto completions
 plugins+=(1password) # opswd copy password to clip board
-# plugins+=(zsh-vi-mode) # cool
 plugins+=(web-search) # google
 plugins+=(gh git-auto-fetch) # gh completions
-plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins+=(zsh-autosuggestions)
 ## lazy loaders
-#plugins+=(nvm)
 plugins+=(pyenv-lazy)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -147,3 +145,21 @@ alias air='$(go env GOPATH)/bin/air'
 alias git-set="git remote set-url origin" # <host>:<workplace>/<repo>.git personalgit:1password/1password-teams-open-source.gi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+# Try to find pyenv, if it's not on the path
+export PYENV_ROOT="${PYENV_ROOT:=${HOME}/.pyenv}"
+if ! type pyenv > /dev/null && [ -f "${PYENV_ROOT}/bin/pyenv" ]; then
+    export PATH="${PYENV_ROOT}/bin:${PATH}"
+fi
+
+# Lazy load pyenv
+if type pyenv > /dev/null; then
+    export PATH="${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:${PATH}"
+    function pyenv() {
+        unset -f pyenv
+        eval "$(command pyenv init -)"
+        if [[ -n "${ZSH_PYENV_LAZY_VIRTUALENV}" ]]; then
+            eval "$(command pyenv virtualenv-init -)"
+        fi
+        pyenv $@
+    }
+fi
