@@ -86,7 +86,7 @@ require("packer").startup(function(use)
     use { 'mfussenegger/nvim-lint' }
 
     -- CoPilot
-    use { 'github/copilot.vim' }
+    use { 'github/copilot.vim', tags = "v1.10.3" }
 
     -- Zen mode
     use { 'folke/zen-mode.nvim' }
@@ -180,8 +180,6 @@ require("packer").startup(function(use)
 
     -- worktrees
     use { 'ThePrimeagen/git-worktree.nvim' }
-
-
 
 
     -- the first run will install packer and our plugins

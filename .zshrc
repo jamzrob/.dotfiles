@@ -91,7 +91,6 @@ export GIT_CONFIG_GLOBAL="$HOME/.dotfiles/.gitconfig"
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export EDITOR="nvim"
-export CLOUDSDK_PYTHON="python3.10"
 
 export PATH="$XDG_DATA_HOME/.pyenv/:$PATH"
 export PATH="$XDG_DATA_HOME/.bun/bin:$PATH"
