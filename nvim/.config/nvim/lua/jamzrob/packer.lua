@@ -14,6 +14,32 @@ local packer_bootstrap = ensure_packer()
 require("packer").startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
+    use {
+        "kawre/leetcode.nvim",
+        build = ":TSUpdate html",
+        dependencies = {
+            "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", -- required by telescope
+            "MunifTanjim/nui.nvim",
+
+            -- optional
+            "nvim-treesitter/nvim-treesitter",
+            "rcarriga/nvim-notify",
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require('leetcode').setup({
+                lang = "python3",
+            })
+        end,
+        cmd = "Leet",
+        opts = {
+            -- configuration goes here
+            lang = "python3"
+        },
+        plugins = {
+            non_standalone = true,
+        }
+    }
     --- VimWiki
     use { 'vimwiki/vimwiki' }
 
@@ -160,9 +186,6 @@ require("packer").startup(function(use)
 
     -- case converter
     use { "tpope/vim-abolish" }
-
-    -- clipboard
-    use { 'ojroques/vim-oscyank', branch = "main" }
 
     -- Quickfix list toggle
     use { "milkypostman/vim-togglelist" }

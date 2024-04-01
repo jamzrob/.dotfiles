@@ -1,3 +1,4 @@
+
 local preset = {
     float_border = 'rounded',
     call_servers = 'local',
@@ -107,7 +108,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 vim.cmd([[autocmd BufWritePost *.html.erb silent! !prettier %]])
 vim.cmd([[autocmd BufWritePost *.html silent! !prettier %]])
-vim.cmd([[autocmd BufWritePost *.ts EslintFixAll]])
+vim.cmd([[autocmd BufWritePost *.ts silent! !prettier %]])
 vim.cmd([[autocmd BufWritePost *.tsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.jsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.js EslintFixAll]])

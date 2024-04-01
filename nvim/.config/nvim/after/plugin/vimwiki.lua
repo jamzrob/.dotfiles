@@ -1,15 +1,18 @@
-
-
 -- vim.keymap.set("n", "<Leader>vs", ":VimwikiVSplitLink<CR>")
 --vim.keymap.set("n", "<Leader>vi", ":vs \\| :VimwikiIndex<CR>")
 vim.keymap.set("n", "<Leader>wa", ":call VimwikiFindAllTasks()<CR>")
 vim.keymap.set("x", "_", "+f(<leader>pldt)<C-c>", { remap = true })
 vim.keymap.set("n", "<leader>wx", ":call VimwikiFindIncompleteTasks()<CR>")
 vim.keymap.set("x", "<leader>-", ":VimwikiChangeSymbolTo -<CR>")
+vim.keymap.set("n", "<leader>www", ":VimwikiChangeSymbolTo -<CR>")
 vim.keymap.set("x", "<leader>gl", ":VimwikiChangeSymbolTo -<CR>:VimwikiToggleListItem <CR>")
 vim.keymap.set("n", "<leader>gl", ":VimwikiChangeSymbolTo -<CR>:VimwikiToggleListItem <CR>")
 vim.keymap.set("v", "<leader>gl", ":VimwikiChangeSymbolTo -<CR>:VimwikiToggleListItem <CR>")
 vim.keymap.set("n", "<leader>ww", "<cmd>silent !tmux neww wiki -n wiki<CR>")
+vim.cmd([[
+nmap <Leader>www <Plug>VimwikiRemoveHeaderLevel
+]])
+
 
 -- vim.keymap.set("n", "-", function() return "<plug>VimwikiNormalizeLink" end, { expr = true, remap = true})
 vim.g.vimwiki_folder = 'expr'

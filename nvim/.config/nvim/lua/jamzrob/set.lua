@@ -49,16 +49,19 @@ vim.o.splitright = true
 
 
 -- clipboard
-vim.o.clipboard="unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
 -- no vi compatbile
 vim.o.compatible = false
 
 
+-- turn off comments
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
 -- autowrap and make comments
-vim.opt.formatoptions:append('c')
-vim.opt.formatoptions:append('o')
+--
+
 
 -- fzf
 vim.opt.rtp:append("/usr/local/opt/fzf")
-

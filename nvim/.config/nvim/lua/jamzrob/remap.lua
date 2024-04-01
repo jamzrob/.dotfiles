@@ -64,7 +64,6 @@ function OpenFileInVerticalSplit(path)
     vim.cmd('vsp ' .. path)
 end
 
-
 -- etsy tests
 vim.api.nvim_set_keymap('n', '<leader>T', [[:tabe `run_test -n %`<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rt', [[:!run_test %<CR>]], { noremap = true, silent = true })
@@ -100,8 +99,8 @@ function _G.git_link()
     vim.fn.setreg('"', url)
     print(url)
 end
+
 vim.api.nvim_command([[command! GitLink lua git_link()]])
 
 
 local M = {}
-
