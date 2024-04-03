@@ -77,6 +77,7 @@ alias vid='vi ~/development/Etsyweb/phplib/EtsyConfig/development.php'
 alias vip='vi ~/development/Etsyweb/phplib/EtsyConfig/production.php'
 alias gitnewrepo="gh repo create my-project --private --source=. --remote=upstream"
 alias autogpt="$HOME/.config/AutoGPT/autogpts/autogpt/autogpt.sh run"
+alias leet="echo :Leet | vim -" 
 
 
 export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
@@ -162,3 +163,4 @@ if type pyenv > /dev/null; then
         pyenv $@
     }
 fi
+alias pp="cd ~/.local/share/nvim/site/pack/packer/start/"

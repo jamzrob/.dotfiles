@@ -68,14 +68,19 @@ require("packer").startup(function(use)
     }
 
     -- Colors
-    use { "ellisonleao/gruvbox.nvim" }
-    use('projekt0n/github-nvim-theme')
-    use('rodnaph/vim-color-schemes')
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    })
-    use('rebelot/kanagawa.nvim')
+    use({ 'rose-pine/neovim', as = 'rose-pine', })
+    use({ "ellisonleao/gruvbox.nvim", as = "gruvbox" })
+    use({ 'rebelot/kanagawa.nvim', as = 'kanagawa' })
+    use({ 'kooparse/vim-color-desert-night', as = 'desert-night' })
+    use({ 'catppuccin/nvim', as = 'catppuccin', })
+    use({ 'fugalh/desert.vim', as = 'desert', })
+    use({ 'marko-cerovac/material.nvim', as = 'material', })
+    use({ 'folke/tokyonight.nvim', as = 'tokyonight', })
+    use({ 'sainnhe/sonokai', as = 'sonokai', })
+    use({ 'sainnhe/everforest', as = 'everforest', })
+    use({ 'sainnhe/gruvbox-material', as = 'gruvbox-material', })
+    use({ 'sainnhe/edge', as = 'edge', })
+
 
     -- Align
     use 'junegunn/vim-easy-align'
@@ -96,7 +101,6 @@ require("packer").startup(function(use)
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-buffer' },
-            { 'L3MON4D3/LuaSnip' },
             { 'onsails/lspkind-nvim' }
         }
     }
@@ -125,7 +129,9 @@ require("packer").startup(function(use)
             require("which-key").setup {
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
-                triggers = { "<leader>" }
+                triggers = { "<leader>" },
+                hidden = { "<silent>", "<cmd>", "<Cmd>", "^:", "^ ", "^call ", "^lua " },
+
                 -- refer to the configuration section below
             }
         end
@@ -199,6 +205,7 @@ require("packer").startup(function(use)
 
     -- snippets
     use { 'L3MON4D3/LuaSnip' }
+    use { 'rafamadriz/friendly-snippets' }
     use {
         'hrsh7th/nvim-cmp',
         config = function()
@@ -217,7 +224,19 @@ require("packer").startup(function(use)
         end
     }
     use { 'saadparwaiz1/cmp_luasnip' }
-    use { 'rafamadriz/friendly-snippets' }
+
+    -- testing
+    use { 'nvim-neotest/neotest' }
+
+    -- annotations
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        -- Uncomment next line if you want to follow only stable versions
+        -- tag = "*"
+    }
 
 
     -- the first run will install packer and our plugins
@@ -274,3 +293,11 @@ vim.cmd([[
     \'links_space_char': '_' }]
     let g:vimwiki_auto_header=1
 ]])
+
+vim.api.nvim_create_user_command(
+    'PS',
+    function()
+        vim.cmd("PackerSync")
+    end,
+    { desc = "Sync packer" }
+)

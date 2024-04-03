@@ -41,7 +41,6 @@ vim.keymap.set("n", "<leader>sv", ":sp!<CR>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- reload config
--- vim.keymap.set("n", "<leader>CR", ":source ~/.config/nvim/init.lua")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
@@ -52,8 +51,6 @@ vim.keymap.set("n", "<C-b>", "<C-^>")
 -- Open file tree
 vim.keymap.set("n", "<c-x>", ":Ex<CR>")
 
--- Reload file
-vim.keymap.set("n", "<leader><CR>", ":so %<CR>");
 
 -- Yank file path
 vim.keymap.set("n", "cp", ":let @\" = expand(\"%\")<cr>");
@@ -104,3 +101,5 @@ vim.api.nvim_command([[command! GitLink lua git_link()]])
 
 
 local M = {}
+
+

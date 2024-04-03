@@ -27,6 +27,13 @@ require("gruvbox").setup({
     transparent_mode = true,
 })
 
+require('kanagawa').setup({})
+require('catppuccin').setup({})
+require('material').setup({})
+require('tokyonight').setup({})
+
+
+
 function ColorMyPencils(color)
     color = color or "rose-pine"
     vim.cmd.colorscheme(color)
@@ -41,4 +48,136 @@ function ColorMyPencils(color)
     vim.opt.signcolumn = "no"
 end
 
-ColorMyPencils("rose-pine")
+vim.api.nvim_create_user_command(
+    'Gruv',
+    function()
+        ColorMyPencils("gruvbox")
+    end,
+    { desc = "Change to gruvbox" }
+)
+
+vim.api.nvim_create_user_command(
+    'Rose',
+    function()
+        ColorMyPencils("rose-pine")
+    end,
+    { desc = "Change to gruvbox" }
+)
+
+vim.api.nvim_create_user_command(
+    'Kanagawa',
+    function()
+        ColorMyPencils("kanagawa")
+    end,
+    { desc = "Change to kanagawa" }
+)
+
+vim.api.nvim_create_user_command(
+    'DesertNight',
+    function()
+        ColorMyPencils("desert-night")
+    end,
+    { desc = "Change to desert-night" }
+)
+
+vim.api.nvim_create_user_command(
+    'Cat',
+    function()
+        ColorMyPencils("catppuccino")
+    end,
+    { desc = "Change to catppuccino" }
+)
+
+
+vim.api.nvim_create_user_command(
+    'Desert',
+    function()
+        ColorMyPencils("desert")
+    end,
+    { desc = "Change to desert" }
+)
+
+vim.api.nvim_create_user_command(
+    'Material',
+    function()
+        ColorMyPencils("material")
+    end,
+    { desc = "Change to material" }
+)
+
+vim.api.nvim_create_user_command(
+    'TokyoNight',
+    function()
+        ColorMyPencils("tokyonight")
+    end,
+    { desc = "Change to tokyonight" }
+)
+
+vim.api.nvim_create_user_command(
+    'Sonokai',
+    function()
+        ColorMyPencils("sonokai")
+    end,
+    { desc = "Change to sonokai" }
+)
+
+vim.api.nvim_create_user_command(
+    'Everforest',
+    function()
+        ColorMyPencils("everforest")
+    end,
+    { desc = "Change to everforest" }
+)
+
+vim.api.nvim_create_user_command(
+    'GruvboxMaterial',
+    function()
+        ColorMyPencils("gruvbox-material")
+    end,
+    { desc = "Change to gruvbox-material" }
+)
+
+vim.api.nvim_create_user_command(
+    'Edge',
+    function()
+        ColorMyPencils("edge")
+    end,
+    { desc = "Change to edge" }
+)
+
+vim.api.nvim_create_user_command(
+    'RandomColor',
+    function()
+        local colors = {
+            "rose-pine",
+            "gruvbox",
+            "kanagawa",
+            "desert-night",
+            "catppuccin",
+            "desert",
+            "material",
+            "tokyonight",
+            "sonokai",
+            "everforest",
+            "gruvbox-material",
+            "edge",
+        }
+        ColorMyPencils(colors[math.random(#colors)])
+    end,
+    { desc = "Change to random color" }
+)
+
+vim.api.nvim_create_user_command(
+    'ColorMyPencils',
+    function()
+        ColorMyPencils()
+    end,
+    { desc = "Change to default color" }
+)
+
+-- run Random color command
+vim.cmd("RandomColor")
+
+vim.cmd([[
+    command! -bang -nargs=? -complete=dir Files  call fzf#vim#colors({'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
+]])

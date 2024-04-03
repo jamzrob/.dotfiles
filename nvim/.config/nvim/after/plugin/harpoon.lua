@@ -23,8 +23,8 @@ local function toggle_telescope(harpoon_files)
     }):find()
 end
 
-vim.keymap.set("n", "<C-m>", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" }, { noremap = true, silent = true })
+--vim.keymap.set("n", "<C-m>", function() toggle_telescope(harpoon:list()) end,
+--   { desc = "Open harpoon window" }, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 -- Toggle previous & next buffers stored within Harpoon list
