@@ -21,6 +21,7 @@ local preset = {
 local lsp = require('lsp-zero').preset(preset)
 
 lsp.ensure_installed({
+    "grammarly",
     "pyright",
     "gopls",
     'tsserver',

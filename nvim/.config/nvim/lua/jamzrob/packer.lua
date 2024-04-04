@@ -43,6 +43,9 @@ require("packer").startup(function(use)
     --- VimWiki
     use { 'vimwiki/vimwiki' }
 
+    -- prettier
+    use { 'prettier/vim-prettier' }
+
     -- Treesitter
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
