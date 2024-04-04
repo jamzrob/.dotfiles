@@ -1,5 +1,4 @@
 data/sesh-input
 data/sesh-more-input
 nvim/plugin/*
-
-
+*packer_compiled*

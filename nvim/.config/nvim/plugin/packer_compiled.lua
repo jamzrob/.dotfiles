@@ -49,8 +49,13 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
+<<<<<<< HEAD
 local package_path_str = "/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
+=======
+local package_path_str = "/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1707061634/share/lua/5.1/?.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1707061634/share/lua/5.1/?/init.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1707061634/lib/luarocks/rocks-5.1/?.lua;/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1707061634/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/jraubenheimer/.cache/nvim/packer_hererocks/2.1.1707061634/lib/lua/5.1/?.so"
+>>>>>>> 031c16d (add oil)
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -79,11 +84,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+<<<<<<< HEAD
   catppuccin = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+=======
+>>>>>>> 031c16d (add oil)
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -104,6 +112,7 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+<<<<<<< HEAD
   desert = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/desert",
@@ -124,6 +133,8 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
+=======
+>>>>>>> 031c16d (add oil)
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -139,16 +150,27 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+<<<<<<< HEAD
   ghtheme = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/ghtheme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+=======
+>>>>>>> 031c16d (add oil)
   ["git-worktree.nvim"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
     url = "https://github.com/ThePrimeagen/git-worktree.nvim"
   },
+<<<<<<< HEAD
+=======
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+>>>>>>> 031c16d (add oil)
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -159,6 +181,7 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
+<<<<<<< HEAD
   gruvbox = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -169,14 +192,27 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
   },
+=======
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+>>>>>>> 031c16d (add oil)
   harpoon = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+<<<<<<< HEAD
   kanagawa = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/kanagawa",
+=======
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+>>>>>>> 031c16d (add oil)
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["leetcode.nvim"] = {
@@ -221,11 +257,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+<<<<<<< HEAD
   material = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/material",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
+=======
+>>>>>>> 031c16d (add oil)
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -251,7 +290,11 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
+<<<<<<< HEAD
     config = { "\27LJ\2\nC\0\1\4\0\4\0\a6\1\0\0'\3\1\0B\1\2\0029\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\15lsp_expand\fluasnip\frequireÉ\1\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0003\4\3\0=\4\5\3=\3\a\0024\3\3\0005\4\b\0>\4\1\3=\3\t\2B\0\2\1K\0\1\0\fsources\1\0\1\tname\fluasnip\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\bcmp\frequire\0" },
+=======
+    config = { "\27LJ\2\nC\0\1\4\0\4\0\a6\1\0\0'\3\1\0B\1\2\0029\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\15lsp_expand\fluasnip\frequireù\1\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0003\4\3\0=\4\5\3=\3\a\0024\3\3\0005\4\b\0>\4\1\3=\3\t\2B\0\2\1K\0\1\0\fsources\1\0\1\tname\fluasnip\fsnippet\1\0\2\fsources\0\fsnippet\0\vexpand\1\0\1\vexpand\0\0\nsetup\bcmp\frequire\0" },
+>>>>>>> 031c16d (add oil)
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
@@ -282,6 +325,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+<<<<<<< HEAD
+=======
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
+>>>>>>> 031c16d (add oil)
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -307,11 +358,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+<<<<<<< HEAD
   sonokai = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/sonokai",
     url = "https://github.com/sainnhe/sonokai"
   },
+=======
+>>>>>>> 031c16d (add oil)
   ["spelunker.vim"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/spelunker.vim",
@@ -322,11 +376,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+<<<<<<< HEAD
   tokyonight = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/tokyonight",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+=======
+>>>>>>> 031c16d (add oil)
   undotree = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/undotree",
@@ -337,6 +394,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-abolish",
     url = "https://github.com/tpope/vim-abolish"
   },
+<<<<<<< HEAD
+=======
+  ["vim-color-schemes"] = {
+    loaded = true,
+    path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-color-schemes",
+    url = "https://github.com/rodnaph/vim-color-schemes"
+  },
+>>>>>>> 031c16d (add oil)
   ["vim-easy-align"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-easy-align",
@@ -372,11 +437,14 @@ _G.packer_plugins = {
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-togglelist",
     url = "https://github.com/milkypostman/vim-togglelist"
   },
+<<<<<<< HEAD
   ["vim-vinegar"] = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vim-vinegar",
     url = "https://github.com/tpope/vim-vinegar"
   },
+=======
+>>>>>>> 031c16d (add oil)
   vimux = {
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/vimux",
@@ -393,7 +461,11 @@ _G.packer_plugins = {
     url = "https://github.com/vimwiki/vimwiki"
   },
   ["which-key.nvim"] = {
+<<<<<<< HEAD
     config = { "\27LJ\2\nï\1\0\0\4\0\n\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\2B\0\2\1K\0\1\0\rtriggers\1\0\0\1\2\0\0\r<leader>\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
+=======
+    config = { "\27LJ\2\nü\1\0\0\4\0\n\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\2B\0\2\1K\0\1\0\rtriggers\1\0\1\rtriggers\0\1\2\0\0\r<leader>\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
+>>>>>>> 031c16d (add oil)
     loaded = true,
     path = "/Users/jraubenheimer/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -412,11 +484,19 @@ try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K
 time([[Config for nvim-lsp-file-operations]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
+<<<<<<< HEAD
 try_loadstring("\27LJ\2\nC\0\1\4\0\4\0\a6\1\0\0'\3\1\0B\1\2\0029\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\15lsp_expand\fluasnip\frequireÉ\1\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0003\4\3\0=\4\5\3=\3\a\0024\3\3\0005\4\b\0>\4\1\3=\3\t\2B\0\2\1K\0\1\0\fsources\1\0\1\tname\fluasnip\fsnippet\1\0\0\vexpand\1\0\0\0\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
 time([[Config for nvim-cmp]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nï\1\0\0\4\0\n\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\2B\0\2\1K\0\1\0\rtriggers\1\0\0\1\2\0\0\r<leader>\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+=======
+try_loadstring("\27LJ\2\nC\0\1\4\0\4\0\a6\1\0\0'\3\1\0B\1\2\0029\1\2\0019\3\3\0B\1\2\1K\0\1\0\tbody\15lsp_expand\fluasnip\frequireù\1\1\0\5\0\n\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0003\4\3\0=\4\5\3=\3\a\0024\3\3\0005\4\b\0>\4\1\3=\3\t\2B\0\2\1K\0\1\0\fsources\1\0\1\tname\fluasnip\fsnippet\1\0\2\fsources\0\fsnippet\0\vexpand\1\0\1\vexpand\0\0\nsetup\bcmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\nü\1\0\0\4\0\n\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0005\2\b\0005\3\a\0=\3\t\2B\0\2\1K\0\1\0\rtriggers\1\0\1\rtriggers\0\1\2\0\0\r<leader>\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
+>>>>>>> 031c16d (add oil)
 time([[Config for which-key.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)

@@ -154,7 +154,8 @@ require("packer").startup(function(use)
 
     -- File tree
     -- - hop up a level, ~ go home
-    use { "tpope/vim-vinegar" }
+    use { 'stevearc/oil.nvim' }
+
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
