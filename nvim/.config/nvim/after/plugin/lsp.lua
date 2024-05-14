@@ -1,4 +1,3 @@
-
 local preset = {
     float_border = 'rounded',
     call_servers = 'local',
@@ -22,7 +21,7 @@ local lsp = require('lsp-zero').preset(preset)
 
 lsp.ensure_installed({
     "grammarly",
-    "pyright",
+    "pylsp",
     "gopls",
     'tsserver',
     'vtsls',
@@ -142,5 +141,5 @@ set path =
 set suffixesadd=.tpl,.php,.js,.scss,.ts
 ]])
 
-require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.pylsp.setup {}
 require 'lspconfig'.htmx.setup {}

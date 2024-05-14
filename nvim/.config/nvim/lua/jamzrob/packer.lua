@@ -242,6 +242,8 @@ require("packer").startup(function(use)
         -- tag = "*"
     }
 
+    use { "ThePrimeagen/refactoring.nvim" }
+
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then
