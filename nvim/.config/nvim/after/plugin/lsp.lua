@@ -99,7 +99,7 @@ lsp.format_on_save({
 
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    pattern = { "*.rb", "*.lua", "*.go" },
+    pattern = { "*.ts", "*.rb", "*.lua", "*.go" },
     desc = "Auto-format files after saving",
     callback = function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
@@ -108,7 +108,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 
 vim.cmd([[autocmd BufWritePost *.html.erb silent! !prettier %]])
 vim.cmd([[autocmd BufWritePost *.html silent! !prettier %]])
-vim.cmd([[autocmd BufWritePost *.ts silent! !prettier %]])
+vim.cmd([[autocmd BufWritePost *.ts silent! EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.tsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.jsx EslintFixAll]])
 vim.cmd([[autocmd BufWritePost *.js EslintFixAll]])

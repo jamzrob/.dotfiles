@@ -164,3 +164,6 @@ if type pyenv > /dev/null; then
     }
 fi
 alias pp="cd ~/.local/share/nvim/site/pack/packer/start/"
+if which luaver > /dev/null; then . `which luaver`; fi
+export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+

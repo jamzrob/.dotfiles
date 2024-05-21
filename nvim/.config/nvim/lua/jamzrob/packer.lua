@@ -244,6 +244,23 @@ require("packer").startup(function(use)
 
     use { "ThePrimeagen/refactoring.nvim" }
 
+    -- Jupiter
+    use { 'luk400/vim-jukit', ft={'jupyter', 'py', 'ipynb'} }
+    use { 'tomtom/tcomment_vim' }
+    -- use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' }
+    -- use jupyter notebooks
+    -- make block comments --
+    --    use { '3rd/image.nvim' }
+    --    use { 'benlubas/molten-nvim', run = ':UpdateRemotePlugins' }
+    --   use { "GCBallesteros/jupytext.nvim" }
+    --
+    --   use {
+    ---      "vhyrro/luarocks.nvim",
+    --       priority = 1001,
+    --       opts = {
+    --           rocks = { "magick" },
+    --       },
+    --   }
 
     -- the first run will install packer and our plugins
     if packer_bootstrap then

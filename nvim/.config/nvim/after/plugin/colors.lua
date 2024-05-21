@@ -44,7 +44,12 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "ColorColumn", { fg = "none", bg = "none" })
     vim.api.nvim_set_hl(0, "CursorLine", { fg = "none", bg = "none", ctermbg = "none" })
     vim.api.nvim_set_hl(0, "LineNr", { fg = "#595959", bg = "#3b2e2b" })
-    vim.api.nvim_set_hl(0, "SignColumn", { fg = "#595959", bg = "#3b2e2b" })
+
+    vim.cmd([[
+        highlight jukit_cellmarker_colors guifg=#404040 guibg=#404040 ctermbg=22 ctermfg=22
+        highlight jukit_textcell_bg_colors guibg=#404040 ctermbg=0
+    ]])
+
     vim.opt.signcolumn = "no"
 end
 
